@@ -1,3 +1,3 @@
 # Dokumentasi Pengujian menggunakan Desk Checking
 
-📌 [Lihat Dokumentasi Testing disini](HesilTes.md)  
+📌 [Lihat Dokumentasi Testing disini](HasilTes.md)  
