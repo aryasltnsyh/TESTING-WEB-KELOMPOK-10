@@ -1,4 +1,4 @@
-BOUNDARY VALUE ANALYSIS
+**BOUNDARY VALUE ANALYSIS**
 
 | Field         | Validasi Panjang/Range | Nilai Batas Valid                                     | Nilai Batas Invalid                                  |
 | ------------- | ---------------------- | ----------------------------------------------------- | ---------------------------------------------------- |
