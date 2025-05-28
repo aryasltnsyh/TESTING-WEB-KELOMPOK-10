@@ -1,8 +1,10 @@
 **BOUNDARY VALUE ANALYSIS**
 
+**FORM REGISTER**
+
 | Field         | Validasi Panjang/Range | Nilai Batas Valid                                     | Nilai Batas Invalid                                  |
 | ------------- | ---------------------- | ----------------------------------------------------- | ---------------------------------------------------- |
-| **Full Name** | Minimal 3 huruf        | `3` huruf → ✅ `"Ana"`                                 | `2` huruf → ❌ `"An"`                                 |
+| **Full Name** | Minimal 3 huruf        | `3` huruf → ✅ `"San"`                                 | `2` huruf → ❌ `"Sa"`                                 |
 | **Username**  | 5–15 karakter          | `5` → ✅ `"user1"`<br>`15` → ✅ `"usernamelengkap"`     | `4` → ❌ `"usr"`<br>`16` → ❌ `"usernamelengkapx"`     |
 | **Password**  | Minimal 6 karakter     | `6` → ✅ `"pass12"`                                    | `5` → ❌ `"12345"`                                    |
 | **Phone**     | 10–13 digit angka      | `10` → ✅ `"0812345678"`<br>`13` → ✅ `"0812345678901"` | `9` → ❌ `"081234567"`<br>`14` → ❌ `"08123456789012"` |
