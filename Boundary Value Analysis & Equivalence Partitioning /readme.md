@@ -1,4 +1,4 @@
-**BOUNDARY VALUE ANALYSIS **
+**BOUNDARY VALUE ANALYSIS**
 
 **FORM REGISTER**
 
@@ -11,6 +11,7 @@
 | **Address**   | Minimal 5 karakter     | `5` → ✅ `"Jl.AB"`                                     | `4` → ❌ `"Jln"`                                      |
 
 **EQUIVALENCE PARTITIONING**
+
 **FORM REGISTER**
 | Field         | Kelas Valid                               | Kelas Invalid                                                               |
 | ------------- | ----------------------------------------- | --------------------------------------------------------------------------- |
