@@ -10,6 +10,18 @@
 | **Phone**     | 10–13 digit angka      | `11` → ✅ `"0812345678"`<br>`13` → ✅ `"0812345678901"` | `10` → ❌ `"0812345677"`<br>`14` → ❌ `"08123456789012"` |
 | **Address**   | Minimal 5 karakter     | `5` → ✅ `"Jl.AB"`                                     | `4` → ❌ `"Jln"`                                      |
 
+**FORM LOGIN **
+
+| Nilai Batas | Keterangan         |
+| ----------- | ------------------ |
+| 4 (min-1)   | Invalid (kurang 1) |
+| 5 (min)     | Valid              |
+| 6 (min+1)   | Valid              |
+| 14 (max-1)  | Valid              |
+| 15 (max)    | Valid              |
+| 16 (max+1)  | Invalid (lebih 1)  |
+
+
 **EQUIVALENCE PARTITIONING**
 
 **FORM REGISTER**
