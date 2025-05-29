@@ -11,10 +11,10 @@
 | No | Input                | Deskripsi                | Expected Result                 | Aktual                     | Status |
 | -- | -------------------- | ---------------------- | ------------------------------- | ------------------------- |----|
 | 1  | `""`                 | Kosong                 |  Error: "Username wajib diisi" | Pesan ditampilkan |     ✅passed                    |
-| 2  | `"ab"` (2 karakter)  | Di bawah batas minimum |  Error: "Minimal 3 karakter"   | Data diperbarui  |❌Failed |
+| 2  | `"ab"` (2 karakter)  | Di bawah batas minimum |  Error: "Minimal 3 karakter"   | Data berhasil disimpan padahal input invalid  |❌Failed |
 | 3  | `"abc"` (3 karakter) | Tepat batas minimum    |  Data diperbarui               |  Data diperbaui   | ✅Passed
 | 4  | `15 karakter`        | Tepat batas maksimum   |  Data diperbarui                         | Data diperbarui|✅Passed                        |
-| 5  | `21 karakter`        | Di atas batas maksimum |  Error: "Maksimal 15 karakter" |  Data diperbaui |❌Failed|
+| 5  | `21 karakter`        | Di atas batas maksimum |  Error: "Maksimal 15 karakter" |  Data berhasil disimpan padahal input invalid |❌Failed|
 
 ---
 
@@ -22,8 +22,8 @@
 | No | Input            | Deskripsi                  | Expected Result                 | Aktual                    | Status |
 | -- | ---------------- | ----------------------- | ------------------------------- | ------------------------- |----|
 | 1  | `""`             | Kosong                  |  Error: "Password wajib diisi" | pesan tidak ada          | ❌Failed              |
-| 2  | `"12345"` (5)  | Di bawah batas minimum  |  Error: "Minimal 6-15 kombinasi karakter"   | Data diperbarui |❌Failed |
-| 3  | `"12345678"` (8) | Tepat batas minimum     | Error: "Minimal 6-15 kombinasi karakter"                         | Data diperbarui     |❌Failed                    |
+| 2  | `"12345"` (5)  | Di bawah batas minimum  |  Error: "Minimal 6-15 kombinasi karakter"   | Data berhasil disimpan padahal input invalid |❌Failed |
+| 3  | `"123456"` (6) | Tepat batas minimum     | Error: "Minimal 6-15 kombinasi karakter"                         | Data berhasil disimpan padahal input invalid     |❌Failed                    |
 | 4  | `"sans1234"`     | Kombinasi huruf & angka | Data diperbarui                          | Data diperbarui    |✅Passed                         |
 | 5  | `sandi1234567890`(15)    | Tepat batas maksimum    | Data diperbarui                           | Data diperbarui   | ✅Passed                         |
 | 6  | `Dsandi1234567890`(16)    | Di atas batas maksimum  | Error: "Minimal 6-15 kombinasi karakter" | Data diperbarui   | ❌Failed                        |
