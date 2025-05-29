@@ -4,7 +4,7 @@
 | No | Input               | Alasan                    | Expected Result           |
 |----|---------------------|---------------------------|----------------------------|
 | 1  | ""                  | Kosong   | ❌ Error: "Username wajib diisi" |
-| 2  | "ab"                | Tepat batas minimum       |  ✅ Valid    |
+| 2  | "ab"                | Tepat terisi      |  ✅ Valid    |
 | 3  | "abc"               | Tepat batas minimum       | ✅ Valid                    |
 | 4  | 20 karakter         | Di atas batas      | ✅ Valid                    |
 
@@ -14,7 +14,7 @@
 | No | Input               | Alasan                    | Expected Result            |
 |----|---------------------|---------------------------|-----------------------------|
 | 1  | ""                  | Kosong                    | ❌ Error: "Password wajib diisi" |
-| 2  | "1234567"           | Tepat batas minimum       | ✅ Valid   |
+| 2  | "1234567"           | Tepat terisi      | ✅ Valid   |
 | 3  | "12345678"          | Tepat batas minimum       | ✅ Valid                     |
 | 4 | "sans1234" | Tepat kombinasi | ✅ Valid |
 | 5  | 32 karakter         | Di atas batas     | ✅ Valid                     |
