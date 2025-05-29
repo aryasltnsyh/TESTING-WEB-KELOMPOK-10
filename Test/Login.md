@@ -6,43 +6,46 @@
 
 # BOUNDARY VALUE ANALYSIS - LOGIN
 
-| Panjang Karakter | Username | Keterangan Username | Password | Keterangan Password |
-| ---------------- | -------- | ------------------- | -------- | ------------------- |
-| 2 (min - 1)      | Invalid  | Invalid (kurang 1)  | Invalid  | Invalid (kurang 4)  |
-| 3         | Valid    | Valid ( Tepat minimal)               | Invalid    | Invalid (kurang 3)              |
-| 6 (min + 1)      | Valid    | Valid               | Valid    | Valid ( Tepat minimal              |
-| 14 (max - 1)     | Valid    | Valid               | Valid    | Valid               |
-| 15 (max)         | Valid    | Valid               | Valid    | Valid               |
-| 16 (max + 1)     | Invalid  | Invalid (lebih 1)   | Invalid  | Invalid (lebih 1)   |
+| Panjang Karakter | Input Username        | Expected Result Username | Actual Result Username | Input Password           | Expected Result Password | Actual Result Password | Status Pengujian |
+| ---------------- | --------------------- | ------------------------ | ---------------------- | ------------------------ | ------------------------ | ---------------------- | ---------------- |
+| 2 (min - 1)      | "us" (2)              | Invalid                  | Invalid                | "pw" (2)                 | Invalid                  | Invalid                | ✅**Passed**       |
+| 3 (min)          | "usr" (3)             | Valid                    | Valid                  | "abc12" (5)              | Invalid                  | Invalid                | ✅**Passed**       |
+| 6 (min + 1)      | "user01" (6)          | Valid                    | Valid                  | "abc123" (6)             | Valid                    | Valid                  | ✅**Passed**       |
+| 14 (max - 1)     | "username12345" (14)  | Valid                    | Valid                  | "pass1234!" (10)         | Valid                    | Valid                  | ✅**Passed**       |
+| 15 (max)         | "usernamelimit1" (15) | Valid                    | Valid                  | "P4ssword!12345" (14)    | Valid                    | Valid                  | ✅**Passed**       |
+| 16 (max + 1)     | "username123456" (16) | Invalid                  | Invalid                | "password12345678!" (18) | Invalid                  | Invalid                | ✅**Passed**       |
+
 
 # EQUIVALENCE PARTITIONING FORM LOGIN
 
 **USERNAMME**
-| Kelas Equivalence               | Contoh Input                | Status  |
-| ------------------------------- | --------------------------- | ------- |
-| Username kurang dari 3 karakter | "us" (2 karakter)          | Invalid |
-| Username 3 sampai 15 karakter   | "user123" (7 karakter)      | Valid   |
-| Username lebih dari 15 karakter | "namauseryangpanjang" (20) | Invalid |
+| Kelas Equivalence          | Input Username          | Panjang Karakter | Expected Result | Actual Result | Status Pengujian |
+| -------------------------- | ----------------------- | ---------------- | --------------- | ------------- | ---------------- |
+| < 3 karakter               | "us"                    | 2                | Invalid         | Invalid       | ✅ Passed         |
+| 3–15 karakter (Valid)      | "user123"               | 7                | Valid           | Valid         | ✅ Passed         |
+| > 15 karakter              | "panjangusernamebanget" | 20               | Invalid         | Invalid       | ✅ Passed         |
+| Mengandung karakter khusus | "user\_name"            | 9                | Invalid         | Valid       | ❌ Failed        |
+| Mengandung spasi           | "user name"             | 9                | Invalid         | Valid     | ❌ Failed        |
+
 
 **PASSWORD**
-| Kelas Equivalence               | Contoh Input               | Status  |
-| ------------------------------- | -------------------------- | ------- |
-| Password kurang dari 6 karakter | "pw" (2 karakter)         | Invalid |
-| Password 6 sampai 15 karakter   | "pass123" (7 karakter)     | Valid   |
-| Password lebih dari 15 karakter | "verylongpassword123" (18) | Invalid |
+| Kelas Equivalence            | Input Password        | Panjang Karakter | Expected Result | Actual Result | Status Pengujian |
+| ---------------------------- | --------------------- | ---------------- | --------------- | ------------- | ---------------- |
+| < 6 karakter                 | "pw1"                 | 3                | Invalid         | Invalid       | ✅ Passed         |
+| 6–15 karakter + kombinasi    | "abc123"              | 6                | Valid           | Valid         | ✅ Passed         |
+| > 15 karakter                | "verylongpassword123" | 20               | Invalid         | Invalid       | ✅ Passed         |
+| Hanya huruf                  | "abcdef"              | 6                | Invalid         | Invalid       | ✅ Passed         |
+| Hanya angka                  | "123456"              | 6                | Invalid         | Invalid       | ✅ Passed         |
+| Kombinasi huruf+angka+simbol | "P4ssw0rd!"           | 9                | Valid           | Valid         | ✅ Passed         |
+
 
 # TEST CASE 
 
-| TC ID | Username Input        | Password Input        | Keterangan Data di DB        | Expected Result                                 | Catatan                               |
-| ----- | --------------------- | --------------------- | ---------------------------- | ----------------------------------------------- | ------------------------------------- |
-| TC11  | `user123`             | `pass123`             | Username & password cocok    | **Login berhasil**                              | Valid login                           |
-| TC12  | `user123`             | `wrongpass`           | Username ada, password salah | **Error: Password salah**                       | Validasi password gagal               |
-| TC13  | `wronguser`           | `pass123`             | Username tidak ada           | **Error: Username tidak ditemukan**             | Username tidak terdaftar              |
-| TC14  | `us`                  | `pw`                  | -                            | **Error: Username dan password invalid**        | Panjang & validasi DB sama-sama gagal |
-| TC15  | `user123456789012`    | `pass123`             | -                            | **Error: Username melebihi batas**              | Panjang username > 15                 |
-| TC16  | `user123`             | `verylongpassword123` | -                            | **Error: Password melebihi batas**              | Panjang password > 15                 |
-| TC17  | `namauseryangpanjang` | `pass123`             | Username tidak ada           | **Error: Username terlalu panjang & tidak ada** | Kombinasi panjang & validasi DB gagal |
-| TC18  | `user123`             | (kosong)              | Username ada                 | **Error: Password wajib diisi**                 | Validasi form sebelum ke DB           |
-| TC19  | (kosong)              | `pass123`             | -                            | **Error: Username wajib diisi**                 | Validasi form sebelum ke DB           |
-| TC20  | `user123`             | `123`                 | Username ada                 | **Error: Password terlalu pendek**              | Gagal validasi panjang sebelum cek DB |
+| No | Test Case ID | Deskripsi                              | Input Username | Input Password | Expected Result                       | Actual Result     | Status |
+| -- | ------------ | -------------------------------------- | -------------- | -------------- | ------------------------------------- | ----------------- | ------ |
+| 1  | TC\_DB\_01   | Login dengan username & password valid | rehe        | rehe1234       | Login berhasil                        | Login berhasil    | ✅Passed |
+| 2  | TC\_DB\_02   | Username tidak terdaftar               | unknown        | P\@ss123       | Gagal login | Gagal login       | ✅Passed |
+| 3  | TC\_DB\_03   | Password salah                         | admin          | salahpass      | Gagal login           | Gagal login       | ✅Passed |
+| 4  | TC\_DB\_04   | Field kosong                           | (kosong)       | P\@ss123       | Error: Username tidak boleh kosong           | Error ditampilkan | ✅Passed |
+
 
