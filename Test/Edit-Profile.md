@@ -21,7 +21,7 @@
 ### Field: Password 
 | No | Input            | Deskripsi                  | Expected Result                 | Aktual                    | Status |
 | -- | ---------------- | ----------------------- | ------------------------------- | ------------------------- |----|
-| 1  | `""`             | Kosong                  |  Error: "Password wajib diisi" | pesan tidak ada          | ❌Failed              |
+| 1  | `""`             | Kosong                  |  Error: "Password wajib diisi" | Pesan kesalahan tidak muncul          | ❌Failed              |
 | 2  | `"12345"` (5)  | Di bawah batas minimum  |  Error: "Minimal 6-15 kombinasi karakter"   | Data berhasil disimpan padahal input invalid |❌Failed |
 | 3  | `"123456"` (6) | Tepat batas minimum     | Error: "Minimal 6-15 kombinasi karakter"                         | Data berhasil disimpan padahal input invalid     |❌Failed                    |
 | 4  | `"sans1234"`     | Kombinasi huruf & angka | Data diperbarui                          | Data diperbarui    |✅Passed                         |
