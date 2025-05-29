@@ -1,4 +1,4 @@
 # Code Walkthrough
 | No | Fitur / Bagian                | Cuplikan / Deskripsi Kode Utama                                                                          | Hasil Analisis / Penjelasan                                                                                         | Screenshot |
 |----|-------------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|------------|
-| 1  | Pengambilan Input User        | ' $username = trim($_POST['username']); ' '$password = trim($_POST['password']);'                          | Input hanya di-trim, belum ada sanitasi atau validasi isi (kosong/format). Perlu penguatan dari sisi keamanan.       | ![](.png)      |
+| 1  | Pengambilan Input 'User'        | ' $username = trim($_POST['username']); ' '$password = trim($_POST['password']);'                          | Input hanya di-trim, belum ada sanitasi atau validasi isi (kosong/format). Perlu penguatan dari sisi keamanan.       | ![](.png)      |
