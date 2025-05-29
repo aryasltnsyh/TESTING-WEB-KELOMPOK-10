@@ -1,3 +1,9 @@
+# Parameter Penilaian 
+| Field     | Parameter Validasi                     | Jenis Pengujian | Alasan Valid/Invalid                              |
+| --------- | -------------------------------------- | --------------- | ------------------------------------------------- |
+| Username  | 3–15 karakter, huruf/angka             | BVA & EP        | Valid:3/15 karakter; Invalid: 4/16 karakter      |
+| Password  | Minimal 6 karakter, kombinasi karakter | BVA & EP        | Valid: ≥6, kombinasi huruf/angka/simbol           |
+
 # BOUNDARY VALUE ANALYSIS - LOGIN
 
 | Panjang Karakter | Username | Keterangan Username | Password | Keterangan Password |
