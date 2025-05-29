@@ -13,7 +13,7 @@
 | 1  | `""`                 | Kosong                 | ❌ Error: "Username wajib diisi" | Pesan ditampilkan |     ✅passed                    |
 | 2  | `"ab"` (2 karakter)  | Di bawah batas minimum | ❌ Error: "Minimal 3 karakter"   | Data diperbarui  |❌Failed |
 | 3  | `"abc"` (3 karakter) | Tepat batas minimum    | ✅ Data diperbarui               | ✅ Data diperbaui   | ✅Passed
-| 4  | `15 karakter`        | Tepat batas maksimum   | ✅ Data diperbarui                         | ✅ passed                        |
+| 4  | `15 karakter`        | Tepat batas maksimum   | ✅ Data diperbarui                         | ✅Data diperbarui|✅Passed                        |
 | 5  | `21 karakter`        | Di atas batas maksimum | ❌ Error: "Maksimal 15 karakter" | ✅ Data diperbaui |✅Passed|
 
 ---
