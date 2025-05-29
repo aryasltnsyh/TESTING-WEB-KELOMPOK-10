@@ -3,7 +3,7 @@
 | Panjang Karakter | Username | Keterangan Username | Password | Keterangan Password |
 | ---------------- | -------- | ------------------- | -------- | ------------------- |
 | 2 (min - 1)      | Invalid  | Invalid (kurang 1)  | Invalid  | Invalid (kurang 4)  |
-| 3 (min -)          | Valid    | Valid ( Tepat minimal)               | Invalid    | Invalid (kurang 3)              |
+| 3         | Valid    | Valid ( Tepat minimal)               | Invalid    | Invalid (kurang 3)              |
 | 6 (min + 1)      | Valid    | Valid               | Valid    | Valid ( Tepat minimal              |
 | 14 (max - 1)     | Valid    | Valid               | Valid    | Valid               |
 | 15 (max)         | Valid    | Valid               | Valid    | Valid               |
@@ -21,8 +21,8 @@
 **PASSWORD**
 | Kelas Equivalence               | Contoh Input               | Status  |
 | ------------------------------- | -------------------------- | ------- |
-| Password kurang dari 3 karakter | "pw" (2 karakter)         | Invalid |
-| Password 5 sampai 15 karakter   | "pass123" (7 karakter)     | Valid   |
+| Password kurang dari 6 karakter | "pw" (2 karakter)         | Invalid |
+| Password 6 sampai 15 karakter   | "pass123" (7 karakter)     | Valid   |
 | Password lebih dari 15 karakter | "verylongpassword123" (18) | Invalid |
 
 
