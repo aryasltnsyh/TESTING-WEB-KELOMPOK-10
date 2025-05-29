@@ -43,10 +43,10 @@
 | TC07  | Password  | Input < 6 karakter                   | `12345`            | Gagal – Error: "Password mminimal 6 karakter"   | muncul "password minimal 6 karakter | ✅|      |
 | TC08  | Password  | Input = 6 karakter                   | `pass12`           | Berhasil                                   | Berhasil      |✅|
 | TC09  | Email     | Format tidak valid (tanpa `@`)       | `abc.com`          | Gagal – Error: "Format email salah"        | Muncul " formal email salah " | ✅      |
-| TC10  | Email     | Format valid                         | `user@mail.com`    | Berhasil                                   | ✅      |
-| TC11  | Phone     | Kurang dari 10 digit                 | `0812345677`       | Gagal – Error: "No. HP tidak valid"        | ❌      |
-| TC12  | Phone     | Tepat 11 digit                       | `08123456789`      | Berhasil                                   | ✅      |
-| TC13  | Phone     | 14 digit (melebihi batas)            | `08123456789012`   | Gagal – Error: "No. HP tidak valid"        | ❌      |
-| TC14  | Phone     | Mengandung huruf                     | `08abc56789`       | Gagal – Error: "No. HP tidak valid"        | ❌      |
-| TC15  | Address   | <5 karakter                          | `Jln`              | Gagal – Error: "Alamat minimal 5 karakter" | ❌      |
-| TC16  | Address   | Tepat 5 karakter                     | `J1.AB`            | Berhasil                                   | ✅      |
+| TC10  | Email     | Format valid                         | `user@mail.com`    | Berhasil                                   | Berhasil      |✅|
+| TC11  | Phone     | Kurang dari 10 digit                 | `0812345677`       | Gagal – Error: "nomor hp minimal 11-13 angka"        | Muncul "nomor hp minimal 11-13 angka"      | ✅|
+| TC12  | Phone     | Tepat 11 digit                       | `08123456789`      | Berhasil                                   | Berhasil      |✅|
+| TC13  | Phone     | 14 digit (melebihi batas)            | `08123456789012`   | Gagal – Error: "nomor harus 11-13 angka"        | Muncul "nomor harus 11-13 angka"      |✅|
+| TC14  | Phone     | Mengandung huruf                     | `08abc56789`       | Gagal – Error: "nomor harus 11-13 angka"        | Muncul "nomor harus 11-13 angka"     |✅|
+| TC15  | Address   | <5 karakter                          | `Jln`              | Gagal – Error: "Alamat minimal 5 karakter" | mmuncul "Alamat minimal 5 karakter"       |✅|
+| TC16  | Address   | Tepat 5 karakter                     | `J1.AB`            | Berhasil                                   | Berhasil      |✅|
