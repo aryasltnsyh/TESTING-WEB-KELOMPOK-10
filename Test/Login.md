@@ -14,7 +14,7 @@
 **USERNAMME**
 | Kelas Equivalence               | Contoh Input                | Status  |
 | ------------------------------- | --------------------------- | ------- |
-| Username kurang dari 6 karakter | "usR" (3 karakter)          | Invalid |
+| Username kurang dari 3 karakter | "us" (2 karakter)          | Invalid |
 | Username 3 sampai 15 karakter   | "user123" (7 karakter)      | Valid   |
 | Username lebih dari 15 karakter | "namauseryangpanjang" (20) | Invalid |
 
