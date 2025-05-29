@@ -2,7 +2,7 @@
 | Field     | Parameter Validasi                     | Jenis Pengujian | Alasan Valid/Invalid                              |
 | --------- | -------------------------------------- | --------------- | ------------------------------------------------- |
 | Full Name | Minimal 3 huruf                        | BVA & EP        | Valid: panjang = 3, huruf semua; Invalid: <3      |
-| Username  | 5–15 karakter, huruf/angka             | BVA & EP        | Valid: 5/15 karakter; Invalid: 4/16 karakter      |
+| Username  | 3–15 karakter, huruf/angka             | BVA & EP        | Valid:3/15 karakter; Invalid: 4/16 karakter      |
 | Password  | Minimal 6 karakter, kombinasi karakter | BVA & EP        | Valid: ≥6, kombinasi huruf/angka/simbol           |
 | Phone     | 10–13 digit angka                      | BVA & EP        | Valid: hanya digit, 10–13; Invalid: huruf/simbol  |
 | Email     | Format email                           | EP              | Valid: format lengkap; Invalid: tanpa '@', domain |
@@ -35,14 +35,14 @@
 | TC ID | Field     | Test Case Description                | Input              | Expected Result                            | Aktual |  Status |
 | ----- | --------- | ------------------------------------ | ------------------ | ------------------------------------------ | ------ |----|
 | TC01  | Full Name | Input kurang dari 3 huruf            | `Sa`               | Gagal – Error: "Nama minimal 3 huruf"      | Muncul Pesan "Nama minimal 3 huruf"      |✅|
-| TC02  | Full Name | Input tepat 3 huruf                  | `San`              | Berhasil                                   | ✅      |
-| TC03  | Username  | Input < 5 karakter                   | `usr`              | Gagal – Error: "Username minimal 5"        | ❌      |
-| TC04  | Username  | Input 5 karakter (batas bawah valid) | `user1`            | Berhasil                                   | ✅      |
-| TC05  | Username  | Input 15 karakter (batas atas valid) | `usernamelengkap`  | Berhasil                                   | ✅      |
-| TC06  | Username  | Input > 15 karakter                  | `usernamelengkapx` | Gagal – Error: "Max 15 karakter"           | ❌      |
-| TC07  | Password  | Input < 6 karakter                   | `12345`            | Gagal – Error: "Password terlalu pendek"   | ❌      |
-| TC08  | Password  | Input = 6 karakter                   | `pass12`           | Berhasil                                   | ✅      |
-| TC09  | Email     | Format tidak valid (tanpa `@`)       | `abc.com`          | Gagal – Error: "Format email salah"        | ❌      |
+| TC02  | Full Name | Input tepat 3 huruf                  | `San`              | Berhasil                                   | Berhasil      |✅|
+| TC03  | Username  | Input < 3 karakter                   | `us`              | Gagal – Error: "Username minimal 3"        | uncul Pesan "Nama minimal 3 karakter"      |✅|
+| TC04  | Username  | Input 3 karakter (batas bawah valid) | `din`            | Berhasil                                   | Berhasil      |✅|
+| TC05  | Username  | Input 15 karakter (batas atas valid) | `usernamelengkap`  | Berhasil                                   | Berhasil      |✅|
+| TC06  | Username  | Input > 15 karakter                  | `usernamelengkapx` | Gagal – Error: "Max 15 karakter"           | MMuncul Error: "Max 15 karakter"      |✅|
+| TC07  | Password  | Input < 6 karakter                   | `12345`            | Gagal – Error: "Password mminimal 6 karakter"   | muncul "password minimal 6 karakter | ✅|      |
+| TC08  | Password  | Input = 6 karakter                   | `pass12`           | Berhasil                                   | Berhasil      |✅|
+| TC09  | Email     | Format tidak valid (tanpa `@`)       | `abc.com`          | Gagal – Error: "Format email salah"        | Muncul " formal email salah " | ✅      |
 | TC10  | Email     | Format valid                         | `user@mail.com`    | Berhasil                                   | ✅      |
 | TC11  | Phone     | Kurang dari 10 digit                 | `0812345677`       | Gagal – Error: "No. HP tidak valid"        | ❌      |
 | TC12  | Phone     | Tepat 11 digit                       | `08123456789`      | Berhasil                                   | ✅      |
