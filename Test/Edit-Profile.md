@@ -34,7 +34,7 @@
 #  Metode: Equivalence Partitioning (EP)
 
 | No | Field    | Input            | Kategori                         | Expected Result                 | Aktual                    | Status |
-| -- | -------- | ---------------- | -------------------------------- | ------------------------------- | ----- |
+| -- | -------- | ---------------- | -------------------------------- | ------------------------------- | ----- |----|
 | 1  | Username | "budi123"        | Valid                            |  Username diperbarui           | Data diperbarui     |✅Passed|
 | 2  | Username | ""               | Tidak valid (kosong)             |  Error: "Username wajib diisi" | Error tampil     |✅Passed|
 | 3  | Username | "ab"             | Invalid |  Error: "Minimal 3 karakter"   | ❌     |Data diperbarui |❌Failed |
