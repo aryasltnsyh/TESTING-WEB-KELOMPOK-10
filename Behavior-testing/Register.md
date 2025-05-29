@@ -1,4 +1,5 @@
 # BEHAVIOR TESTING - REGISTER
+---
 | ID   | Fitur    | Langkah Uji                                              | Input                                                                                                                                                 | Expected Result                                               | Actual | Status |
 | ---- | -------- | -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------ | ------ |
 | TC01 | Register | Kosongkan semua field dan klik tombol "Register"         | Semua field kosong                                                                                                                                    | Error muncul pada setiap field: “Wajib diisi”                 | Tidak ada error muncul     |  ❌Tidak valid   |
