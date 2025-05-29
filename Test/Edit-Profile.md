@@ -1,12 +1,20 @@
+# Parameter Penilaian 
+| Field     | Parameter Validasi                     | Jenis Pengujian | Alasan Valid/Invalid                              |
+| --------- | -------------------------------------- | --------------- | ------------------------------------------------- |
+| Username  | 3–15 karakter, huruf/angka             | BVA & EP        | Valid:3/15 karakter; Invalid: 4/16 karakter      |
+| Password  | Minimal 6 karakter, kombinasi karakter | BVA & EP        | Valid: ≥6, kombinasi huruf/angka/simbol           |
+
+
 #  Metode: Boundary Value Analysis (BVA)
 
-### Field: Username (minimum 3 karakter, maksimum 20 karakter)
-| No | Input               | Alasan                    | Expected Result           |
-|----|---------------------|---------------------------|----------------------------|
-| 1  | ""                  | Kosong   | ❌ Error: "Username wajib diisi" |
-| 2  | "ab"                | Tepat terisi      |  ✅ Valid    |
-| 3  | "abc"               | Tepat batas minimum       | ✅ Valid                    |
-| 4  | 20 karakter         | Di atas batas      | ✅ Valid                    |
+### Field: Username 
+| No | Input                | Deskripsi                | Expected Result                 | Aktual                     | Status |
+| -- | -------------------- | ---------------------- | ------------------------------- | ------------------------- |----|
+| 1  | `""`                 | Kosong                 | ❌ Error: "Username wajib diisi" | Pesan ditampilkan |     ✅passed                    |
+| 2  | `"ab"` (2 karakter)  | Di bawah batas minimum | ❌ Error: "Minimal 3 karakter"   | Data diperbarui  |❌Failed |
+| 3  | `"abc"` (3 karakter) | Tepat batas minimum    | ✅ Data diperbarui               | ✅ Data diperbaui   | ✅Passed
+| 4  | `15 karakter`        | Tepat batas maksimum   | ✅ Data diperbarui                         | ✅ passed                        |
+| 5  | `21 karakter`        | Di atas batas maksimum | ❌ Error: "Maksimal 15 karakter" | ✅ Data diperbaui |✅Passed|
 
 ---
 
