@@ -2,7 +2,7 @@
 | Field     | Parameter Validasi                     | Jenis Pengujian | Alasan Valid/Invalid                              |
 | --------- | -------------------------------------- | --------------- | ------------------------------------------------- |
 | Username  | 3–15 karakter, huruf/angka             | BVA & EP        | Valid:3/15 karakter; Invalid: 4/16 karakter      |
-| Password  | Minimal 6 karakter, kombinasi karakter | BVA & EP        | Valid: ≥6, kombinasi huruf/angka/simbol           |
+| Password  | Minimal 6-15 karakter, kombinasi karakter | BVA & EP        | Valid: ≥6, kombinasi huruf/angka/simbol           |
 
 
 #  Metode: Boundary Value Analysis (BVA)
@@ -18,14 +18,15 @@
 
 ---
 
-### Field: Password (minimum 8 karakter, maksimum 32 karakter)
-| No | Input               | Alasan                    | Expected Result            |
-|----|---------------------|---------------------------|-----------------------------|
-| 1  | ""                  | Kosong                    | ❌ Error: "Password wajib diisi" |
-| 2  | "1234567"           | Tepat terisi      | ✅ Valid   |
-| 3  | "12345678"          | Tepat batas minimum       | ✅ Valid                     |
-| 4 | "sans1234" | Tepat kombinasi | ✅ Valid |
-| 5  | 32 karakter         | Di atas batas     | ✅ Valid                     |
+### Field: Password 
+| No | Input            | Deskripsi                  | Expected Result                 | Aktual                    | Status |
+| -- | ---------------- | ----------------------- | ------------------------------- | ------------------------- |----|
+| 1  | `""`             | Kosong                  |  Error: "Password wajib diisi" | pesan tidak ada          | ❌Failed              |
+| 2  | `"12345"` (5)  | Di bawah batas minimum  |  Error: "Minimal 6-15 kombinasi karakter"   | Data diperbarui |❌Failed |
+| 3  | `"12345678"` (8) | Tepat batas minimum     | Error: "Minimal 6-15 kombinasi karakter"                         | Data diperbarui     |❌Failed                    |
+| 4  | `"sans1234"`     | Kombinasi huruf & angka | Data diperbarui                          | Data diperbarui    |✅Passed                         |
+| 5  | `sandi1234567890`(15)    | Tepat batas maksimum    | Data diperbarui                           | Data diperbarui   | ✅Passed                         |
+| 6  | `Dsandi1234567890`(16)    | Di atas batas maksimum  | Error: "Minimal 6-15 kombinasi karakter" | Data diperbarui   | ❌Failed                        |
 
 
 ---
