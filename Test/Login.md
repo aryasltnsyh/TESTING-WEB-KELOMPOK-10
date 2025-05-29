@@ -25,4 +25,18 @@
 | Password 6 sampai 15 karakter   | "pass123" (7 karakter)     | Valid   |
 | Password lebih dari 15 karakter | "verylongpassword123" (18) | Invalid |
 
+# TEST CASE 
+
+| TC ID | Username Input        | Password Input        | Keterangan Data di DB        | Expected Result                                 | Catatan                               |
+| ----- | --------------------- | --------------------- | ---------------------------- | ----------------------------------------------- | ------------------------------------- |
+| TC11  | `user123`             | `pass123`             | Username & password cocok    | **Login berhasil**                              | Valid login                           |
+| TC12  | `user123`             | `wrongpass`           | Username ada, password salah | **Error: Password salah**                       | Validasi password gagal               |
+| TC13  | `wronguser`           | `pass123`             | Username tidak ada           | **Error: Username tidak ditemukan**             | Username tidak terdaftar              |
+| TC14  | `us`                  | `pw`                  | -                            | **Error: Username dan password invalid**        | Panjang & validasi DB sama-sama gagal |
+| TC15  | `user123456789012`    | `pass123`             | -                            | **Error: Username melebihi batas**              | Panjang username > 15                 |
+| TC16  | `user123`             | `verylongpassword123` | -                            | **Error: Password melebihi batas**              | Panjang password > 15                 |
+| TC17  | `namauseryangpanjang` | `pass123`             | Username tidak ada           | **Error: Username terlalu panjang & tidak ada** | Kombinasi panjang & validasi DB gagal |
+| TC18  | `user123`             | (kosong)              | Username ada                 | **Error: Password wajib diisi**                 | Validasi form sebelum ke DB           |
+| TC19  | (kosong)              | `pass123`             | -                            | **Error: Username wajib diisi**                 | Validasi form sebelum ke DB           |
+| TC20  | `user123`             | `123`                 | Username ada                 | **Error: Password terlalu pendek**              | Gagal validasi panjang sebelum cek DB |
 
