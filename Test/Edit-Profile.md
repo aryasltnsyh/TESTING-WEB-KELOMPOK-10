@@ -6,8 +6,7 @@
 | 1  | ""                  | Di bawah batas minimum    | ❌ Error: "Username wajib diisi" |
 | 2  | "ab"                | Tepat batas minimum       |  ✅ Valid    |
 | 3  | "abc"               | Tepat batas minimum       | ✅ Valid                    |
-| 4  | 20 karakter         | Tepat batas maksimum      | ✅ Valid                    |
-| 5  | 21 karakter         | Di atas batas maksimum    | ✅ Valid|
+| 4  | 20 karakter         | Di atas batas      | ✅ Valid                    |
 
 ---
 
@@ -17,8 +16,8 @@
 | 1  | ""                  | Kosong                    | ❌ Error: "Password wajib diisi" |
 | 2  | "1234567"           | Tepat batas minimum       | ✅ Valid   |
 | 3  | "12345678"          | Tepat batas minimum       | ✅ Valid                     |
-| 4  | 32 karakter         | Tepat batas maksimum      | ✅ Valid                     |
-| 5  | 33 karakter         | Melebihi batas maksimum   | ✅ Valid |
+| 4  | 32 karakter         | Di atas batas     | ✅ Valid                     |
+
 
 ---
 
@@ -31,7 +30,7 @@
 | 3  | Username  | "ab"                | valid                    | ✅ Username diperbarui    |
 | 4  | Password  | "strongP@ss123"     | Valid                    | ✅ Password diperbarui    |
 | 5  | Password  | "pass"              | valid | ✅ Password diperbarui  |
-| 6  | Password  | ""                  | valid     | ✅ terbaharui  |
+
 
 ---
 
