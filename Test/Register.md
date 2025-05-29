@@ -1,6 +1,4 @@
-# BOUNDARY VALUE ANALYSIS
-
-**FORM REGISTER**
+# BOUNDARY VALUE ANALYSIS - REGISTER
 
 | Field         | Validasi Panjang/Range | Nilai Batas Valid                                     | Nilai Batas Invalid                                  |
 | ------------- | ---------------------- | ----------------------------------------------------- | ---------------------------------------------------- |
