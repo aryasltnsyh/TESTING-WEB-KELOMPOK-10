@@ -1,0 +1,11 @@
+| **Test Case** | **Username**  | **Password** | **Browser** |
+| ------------- | ------------- | ------------ | ----------- |
+| TC1           | Valid         | Valid        | Chrome      |
+| TC2           | Valid         | Salah        | Firefox     |
+| TC3           | Valid         | Kosong       | Edge        |
+| TC4           | Kosong        | Valid        | Firefox     |
+| TC5           | Kosong        | Salah        | Edge        |
+| TC6           | Kosong        | Kosong       | Chrome      |
+| TC7           | Karakter aneh | Valid        | Edge        |
+| TC8           | Karakter aneh | Salah        | Chrome      |
+| TC9           | Karakter aneh | Kosong       | Firefox     |
