@@ -1,1 +1,90 @@
 
+Detail Uji Kasus Test Case
+Test Case TC1:
+
+Username: user123 (valid)
+Password: rahasia123 (valid)
+Browser: Chrome
+Expected Result: Login berhasil dan diarahkan ke dashboard.
+Actual Result: (diisi setelah uji coba)
+Status: ✅ Pass
+
+---
+
+Test Case 2 (TC2)
+Username: user123 (Valid)
+Password: password_salah (Salah)
+Browser: Firefox
+Expected Result: Login gagal, muncul pesan “Username atau password salah”.
+Actual Result: Login gagal, muncul alert "Username atau Password salah!"
+Status:✅ Pass
+
+---
+🔹 Test Case 3 (TC3)
+Username: user123 (Valid)
+Password: (kosong)
+Browser: Edge
+Expected Result: Login gagal, muncul pesan “Password tidak boleh kosong”.
+Actual Result: Form tidak diproses, muncul alert “Password wajib diisi!”
+Status:✅ Pass
+
+---
+
+🔹 Test Case 4 (TC4)
+Username: (kosong)
+Password: rahasia123 (Valid)
+Browser: Firefox
+Expected Result: Login gagal, muncul pesan “Username tidak boleh kosong”.
+Actual Result: Form tidak diproses, muncul alert “Username wajib diisi!”
+Status: ✅ Pass
+
+---
+
+🔹 Test Case 5 (TC5)
+Username: (kosong)
+Password: password_salah (Salah)
+Browser: Edge
+Expected Result: Login gagal, muncul pesan validasi untuk username dan password.
+Actual Result: Form tidak diproses, muncul alert “Username wajib diisi!”
+Status: ✅ Pass
+
+---
+
+🔹 Test Case 6 (TC6)
+Username: (kosong)
+Password: (kosong)
+Browser: Chrome
+Expected Result: Login gagal, muncul pesan “Username dan password tidak boleh kosong”.
+Actual Result: Form tidak diproses, muncul alert “Username wajib diisi!”
+Status: ✅ Pass
+
+---
+
+🔹 Test Case 7 (TC7)
+Username: @$%^&*! (karakter aneh)
+Password: rahasia123 (Valid)
+Browser: Edge
+Expected Result: Login gagal, muncul pesan “Format username tidak valid”.
+Actual Result: Login gagal, muncul alert “Username atau Password salah!”
+Status: ✅ Pass
+
+---
+
+🔹 Test Case 8 (TC8)
+Username: @$%^&*! (karakter aneh)
+Password: password_salah (Salah)
+Browser: Chrome
+Expected Result: Login gagal, muncul pesan kesalahan umum atau validasi input.
+Actual Result: Login gagal, muncul alert “Username atau Password salah!”
+Status: ✅ Pass
+
+---
+
+🔹 Test Case 9 (TC9)
+Username: @$%^&*! (karakter aneh)
+Password: (kosong)
+Browser: Firefox
+Expected Result: Login gagal, muncul pesan “Password tidak boleh kosong” dan validasi username.
+Actual Result: Form tidak diproses, muncul alert “Password wajib diisi!”
+Status: ✅ Pass
+
