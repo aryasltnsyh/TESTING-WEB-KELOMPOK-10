@@ -32,9 +32,9 @@
 
 # TEST CASE REGISTER
 ---
-| TC ID | Field     | Test Case Description                | Input              | Expected Result                            | Status |
-| ----- | --------- | ------------------------------------ | ------------------ | ------------------------------------------ | ------ |
-| TC01  | Full Name | Input kurang dari 3 huruf            | `Sa`               | Gagal – Error: "Nama minimal 3 huruf"      | ❌      |
+| TC ID | Field     | Test Case Description                | Input              | Expected Result                            | Aktual |  Status |
+| ----- | --------- | ------------------------------------ | ------------------ | ------------------------------------------ | ------ |----|
+| TC01  | Full Name | Input kurang dari 3 huruf            | `Sa`               | Gagal – Error: "Nama minimal 3 huruf"      | Muncul Pesan "Nama minimal 3 huruf"      |✅|
 | TC02  | Full Name | Input tepat 3 huruf                  | `San`              | Berhasil                                   | ✅      |
 | TC03  | Username  | Input < 5 karakter                   | `usr`              | Gagal – Error: "Username minimal 5"        | ❌      |
 | TC04  | Username  | Input 5 karakter (batas bawah valid) | `user1`            | Berhasil                                   | ✅      |
