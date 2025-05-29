@@ -1,5 +1,5 @@
 # BEHAVIOR TESTING
-
+---
 | ID   | Fitur        | Langkah Uji                                                            | Input                                                                | Expected Result                                          | Actual | Status |
 | ---- | ------------ | ---------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------- | ------ | ------ |
 | TC01 | Edit Profile | Kosongkan username dan password, lalu klik tombol Simpan               | Username: ""<br>Password: ""                                         | Error: “Username wajib diisi”                            | Muncul "username tidak boleh kosong"      | ✅Passed       |
