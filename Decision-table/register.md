@@ -6,7 +6,7 @@
 | Email       | Format email valid (contoh: [nama@email.com](mailto:nama@email.com)), tidak duplikat |
 | Address     | Minimal 5 karakter, huruf/angka/simbol umum                          |
 | No. Telepon | 11–13 digit angka                                                    |
-| Username    | 5–15 karakter, huruf/angka                                           |
+| Username    | 5–15 karakter, huruf/angka, tidak duplikat                                           |
 | Password    | Minimal 6 karakter, kombinasi huruf/angka                            |
 
 # Decision Table 
