@@ -1,6 +1,6 @@
 # BOUNDARY VALUE ANALYSIS - LOGIN
 
-**USERNAME**                        **PASSWORD**
+**USERNAME**                                                                     **PASSWORD**
 
 | Nilai Batas | Keterangan         | Nilai Batas | Keterangan         |
 | ----------- | ------------------ | ----------- | ------------------ |
