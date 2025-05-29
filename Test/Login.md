@@ -9,14 +9,14 @@
 | 15 (max)         | Valid    | Valid               | Valid    | Valid               |
 | 16 (max + 1)     | Invalid  | Invalid (lebih 1)   | Invalid  | Invalid (lebih 1)   |
 
-# EQUIVALENCE PARTITIONING 
-**FORM LOGIN**
+# EQUIVALENCE PARTITIONING FORM LOGIN
+
 **USERNAMME**
 | Kelas Equivalence               | Contoh Input                | Status  |
 | ------------------------------- | --------------------------- | ------- |
 | Username kurang dari 5 karakter | "usr" (3 karakter)          | Invalid |
 | Username 5 sampai 15 karakter   | "user123" (7 karakter)      | Valid   |
-| Username lebih dari 15 karakter | "usernameiswaytoolong" (19) | Invalid |
+| Username lebih dari 15 karakter | "namauseryangpanjang" (20) | Invalid |
 
 **PASSWORD**
 | Kelas Equivalence               | Contoh Input               | Status  |
@@ -25,7 +25,7 @@
 | Password 5 sampai 15 karakter   | "pass123" (7 karakter)     | Valid   |
 | Password lebih dari 15 karakter | "verylongpassword123" (18) | Invalid |
 
-# BEHAVIOR TESTING  ❌ Failed
+# BEHAVIOR TESTING  
 | ID   | Fitur | Langkah Uji                                        | Input                                                   | Expected Result                               | Actual | Status |
 | ---- | ----- | -------------------------------------------------- | ------------------------------------------------------- | --------------------------------------------- | ------ | ------ |
 | TC01 | Login | Kosongkan username dan password, klik tombol Login | Username: ""<br>Password: ""                            | Error: “Wajib diisi” pada kedua field         | Muncul pesan " tidak boleh kosong"        | ✅ Passed       |
