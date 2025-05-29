@@ -21,8 +21,8 @@
 **PASSWORD**
 | Kelas Equivalence               | Contoh Input               | Status  |
 | ------------------------------- | -------------------------- | ------- |
-| Password kurang dari 6 karakter | "pwS" (3 karakter)         | Invalid |
-| Password 6 sampai 15 karakter   | "pass123" (7 karakter)     | Valid   |
+| Password kurang dari 3 karakter | "pw" (2 karakter)         | Invalid |
+| Password 5 sampai 15 karakter   | "pass123" (7 karakter)     | Valid   |
 | Password lebih dari 15 karakter | "verylongpassword123" (18) | Invalid |
 
 
