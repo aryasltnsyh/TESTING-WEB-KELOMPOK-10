@@ -3,7 +3,7 @@
 ### Field: Username (minimum 3 karakter, maksimum 20 karakter)
 | No | Input               | Alasan                    | Expected Result           |
 |----|---------------------|---------------------------|----------------------------|
-| 1  | ""                  | Di bawah batas minimum    | ❌ Error: "Username wajib diisi" |
+| 1  | ""                  | Kosong   | ❌ Error: "Username wajib diisi" |
 | 2  | "ab"                | Tepat batas minimum       |  ✅ Valid    |
 | 3  | "abc"               | Tepat batas minimum       | ✅ Valid                    |
 | 4  | 20 karakter         | Di atas batas      | ✅ Valid                    |
@@ -16,7 +16,8 @@
 | 1  | ""                  | Kosong                    | ❌ Error: "Password wajib diisi" |
 | 2  | "1234567"           | Tepat batas minimum       | ✅ Valid   |
 | 3  | "12345678"          | Tepat batas minimum       | ✅ Valid                     |
-| 4  | 32 karakter         | Di atas batas     | ✅ Valid                     |
+| 4 | "sans1234" | Tepat kombinasi | ✅ Valid |
+| 5  | 32 karakter         | Di atas batas     | ✅ Valid                     |
 
 
 ---
