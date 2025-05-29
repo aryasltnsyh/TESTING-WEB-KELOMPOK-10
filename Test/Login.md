@@ -2,8 +2,8 @@
 
 | Panjang Karakter | Username | Keterangan Username | Password | Keterangan Password |
 | ---------------- | -------- | ------------------- | -------- | ------------------- |
-| 2 (min - 1)      | Invalid  | Invalid (kurang 1)  | Invalid  | Invalid (kurang 1)  |
-| 3 (min)          | Valid    | Valid               | Valid    | Valid               |
+| 2 (min - 1)      | Invalid  | Invalid (kurang 1)  | Invalid  | Invalid (kurang 4)  |
+| 3 (min -)          | Valid    | Valid               | Invalid    | Invalid (kurang 3)              |
 | 6 (min + 1)      | Valid    | Valid               | Valid    | Valid               |
 | 14 (max - 1)     | Valid    | Valid               | Valid    | Valid               |
 | 15 (max)         | Valid    | Valid               | Valid    | Valid               |
