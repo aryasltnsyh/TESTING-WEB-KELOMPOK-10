@@ -1,4 +1,6 @@
 # Code Walkthrough
 | No | Fitur / Bagian                | Cuplikan / Deskripsi Kode Utama                                                                          | Hasil Analisis / Penjelasan                                                                                         | Screenshot |
 |----|-------------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|------------|
-| 1  | Pengambilan Input User        | `$username = trim($_POST['username']);` ` $password = trim($_POST['password']);`                         | Input hanya di-trim, belum ada sanitasi atau validasi isi (kosong/format). Perlu penguatan dari sisi keamanan.       | ![](login.png)      |
+| 1  | Pengambilan Input Login User  | `$username = trim($_POST['username']);` ` $password = trim($_POST['password']);`                         | Input hanya di-trim, belum ada sanitasi atau validasi isi (kosong/format). Perlu penguatan dari sisi keamanan.       | ![](login.png)      |
+| 2  | Pemeriksaan Status Login      | `if($result === true) { redirect('index.php'); } elseif($result === 'not_verified') { ... } else { ... }`| Sudah mencakup logika bercabang: berhasil, akun belum diverifikasi, dan gagal. Ini baik untuk path testing.          | ![](login.png)      |
+
