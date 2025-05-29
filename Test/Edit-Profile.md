@@ -33,13 +33,14 @@
 
 #  Metode: Equivalence Partitioning (EP)
 
-| No | Field     | Input               | Kategori                 | Expected Result           |
-|----|-----------|---------------------|--------------------------|---------------------------|
-| 1  | Username  | "budi123"           | Valid                    | ✅ Username diperbarui    |
-| 2  | Username  | ""                  | Tidak valid (kosong)     | ❌ Error: "Username wajib diisi" |
-| 3  | Username  | "ab"                | valid                    | ✅ Username diperbarui    |
-| 4  | Password  | "strongP@ss123"     | Valid                    | ✅ Password diperbarui    |
-| 5  | Password  | "pass"              | valid | ✅ Password diperbarui  |
+| No | Field    | Input            | Kategori                         | Expected Result                 | Aktual                    | Status |
+| -- | -------- | ---------------- | -------------------------------- | ------------------------------- | ----- |
+| 1  | Username | "budi123"        | Valid                            |  Username diperbarui           | Data diperbarui     |✅Passed|
+| 2  | Username | ""               | Tidak valid (kosong)             |  Error: "Username wajib diisi" | Error tampil     |✅Passed|
+| 3  | Username | "ab"             | Invalid |  Error: "Minimal 3 karakter"   | ❌     |Data diperbarui |❌Failed |
+| 4  | Password | "strongP\@ss123" | Valid                            |  Password diperbarui           | Data diperbarui     |✅Passed|
+| 5  | Password | "pass" (4 huruf) | Invalid     |  Error: "Minimal 6-15 kombinasi karakter"   |Data diperbarui     |❌Failed |
+
 
 
 ---
