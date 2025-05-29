@@ -1,1 +1,41 @@
+# 🧪 Metode: Boundary Value Analysis (BVA)
+
+### Field: Username (minimum 3 karakter, maksimum 20 karakter)
+| No | Input               | Alasan                    | Expected Result           |
+|----|---------------------|---------------------------|----------------------------|
+| 1  | ""                  | Di bawah batas minimum    | ❌ Error: "Username wajib diisi" |
+| 2  | "ab"                | Tepat di bawah batas (2)  | ❌ Error: "Minimal 3 karakter"   |
+| 3  | "abc"               | Tepat batas minimum       | ✅ Valid                    |
+| 4  | 20 karakter         | Tepat batas maksimum      | ✅ Valid                    |
+| 5  | 21 karakter         | Di atas batas maksimum    | ❌ Error: "Maksimal 20 karakter"|
+
+---
+
+### Field: Password (minimum 8 karakter, maksimum 32 karakter)
+| No | Input               | Alasan                    | Expected Result            |
+|----|---------------------|---------------------------|-----------------------------|
+| 1  | ""                  | Kosong                    | ❌ Error: "Password wajib diisi" |
+| 2  | "1234567"           | 7 karakter (di bawah min) | ❌ Error: "Minimal 8 karakter"   |
+| 3  | "12345678"          | Tepat batas minimum       | ✅ Valid                     |
+| 4  | 32 karakter         | Tepat batas maksimum      | ✅ Valid                     |
+| 5  | 33 karakter         | Melebihi batas maksimum   | ❌ Error: "Maksimal 32 karakter" |
+
+---
+
+# 🧪 Metode: Equivalence Partitioning (EP)
+
+| No | Field     | Input               | Kategori                 | Expected Result           |
+|----|-----------|---------------------|--------------------------|---------------------------|
+| 1  | Username  | "budi123"           | Valid                    | ✅ Username diperbarui    |
+| 2  | Username  | ""                  | Tidak valid (kosong)     | ❌ Error: "Username wajib diisi" |
+| 3  | Username  | "ab"                | Tidak valid (terlalu pendek) | ❌ Error                 |
+| 4  | Password  | "strongP@ss123"     | Valid                    | ✅ Password diperbarui    |
+| 5  | Password  | "pass"              | Tidak valid (terlalu pendek) | ❌ Error: "Minimal 8 karakter" |
+| 6  | Password  | ""                  | Tidak valid (kosong)     | ❌ Error: "Password wajib diisi" |
+
+---
+
+## ✅ Catatan
+- Sistem harus memberikan pesan kesalahan spesifik untuk setiap validasi yang gagal.
+- Jika hanya satu field yang valid, tetapi yang lain tidak, sistem **tidak boleh menyimpan perubahan**.
 
