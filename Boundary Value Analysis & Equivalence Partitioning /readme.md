@@ -25,17 +25,7 @@
 | 16 (max+1)  | Invalid (lebih 1)  |
 
 
-**EQUIVALENCE PARTITIONING**
 
-**FORM REGISTER**
-| Field         | Kelas Valid                               | Kelas Invalid                                                               |
-| ------------- | ----------------------------------------- | --------------------------------------------------------------------------- |
-| **Full Name** | Huruf & spasi, ≥ 3 huruf                  | Kosong, <3 huruf             |
-| **Username**  | 5–15 karakter, huruf/angka                | <5 atau >15 karakter                        |
-| **Password**  | ≥6 karakter, kombinasi huruf/angka/simbol | <6 karakteR        |
-| **Email**     | Format email valid (`a@b.com`)            | Tanpa `@`, tanpa domain, kosong (`"abc"`, `"a@"`, `"@b.com"`, `""`)         |
-| **Phone**     | 11–13 digit angka                         | <10 atau >13 digit, mengandung huruf/simbol (`"08abc56789"`, `"0812-3456"`) |
-| **Address**   | ≥5 karakter, huruf/angka/simbol umum      | Kosong atau <5 karakter (`"RT2"`, `""`)                                     |
 
 **FORM LOGIN**
 **USERNAMME**
