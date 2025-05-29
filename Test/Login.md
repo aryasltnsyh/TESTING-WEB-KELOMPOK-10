@@ -1,7 +1,6 @@
 # BOUNDARY VALUE ANALYSIS - LOGIN
 
-**USERNAME**                                                                     **PASSWORD**
-
+| USERNAME                         | PASSWORD |
 | Nilai Batas | Keterangan         | Nilai Batas | Keterangan         |
 | ----------- | ------------------ | ----------- | ------------------ |
 | 4 (min-1)   | Invalid (kurang 1) | 4 (min-1)   | Invalid (kurang 1) |
