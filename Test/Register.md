@@ -1,27 +1,12 @@
 # Parameter Penilaian 
-| Field     | Nilai Uji                       | Status    | Jenis Validasi | Alasan Penilaian                                                 |
-| --------- | ------------------------------- | --------- | -------------- | ---------------------------------------------------------------- |
-| Full Name | "San"                           | ✅ Valid   | BVA, EP        | Panjang = 3 huruf, sesuai syarat minimal                         |
-| Full Name | "Sa"                            | ❌ Invalid | BVA, EP        | Kurang dari 3 huruf                                              |
-| Username  | "user1"                         | ✅ Valid   | BVA, EP        | Panjang = 5 karakter, sesuai batas bawah                         |
-| Username  | "usernamelengkap"               | ✅ Valid   | BVA, EP        | Panjang = 15 karakter, sesuai batas atas                         |
-| Username  | "usr"                           | ❌ Invalid | BVA, EP        | Kurang dari 5 karakter                                           |
-| Username  | "usernamelengkapx"              | ❌ Invalid | BVA, EP        | Lebih dari 15 karakter                                           |
-| Password  | "pass12"                        | ✅ Valid   | BVA, EP        | Minimal 6 karakter, kombinasi huruf & angka                      |
-| Password  | "12345"                         | ❌ Invalid | BVA, EP        | Hanya 5 karakter, tidak memenuhi syarat                          |
-| Phone     | "0812345678"                    | ✅ Valid   | BVA, EP        | 10 digit angka, sesuai batas bawah                               |
-| Phone     | "0812345678901"                 | ✅ Valid   | BVA, EP        | 13 digit angka, sesuai batas atas                                |
-| Phone     | "0812345677"                    | ❌ Invalid | BVA, EP        | Hanya 9 digit, kurang dari batas bawah                           |
-| Phone     | "08123456789012"                | ❌ Invalid | BVA, EP        | 14 digit, melebihi batas atas                                    |
-| Phone     | "08abc56789"                    | ❌ Invalid | EP             | Mengandung huruf, bukan digit semua                              |
-| Email     | "[abc@b.com](mailto:abc@b.com)" | ✅ Valid   | EP             | Format email lengkap ([nama@domain.com](mailto:nama@domain.com)) |
-| Email     | "abc"                           | ❌ Invalid | EP             | Tidak mengandung '@' dan domain                                  |
-| Email     | "@b.com"                        | ❌ Invalid | EP             | Tidak ada nama sebelum '@'                                       |
-| Email     | "abc@"                          | ❌ Invalid | EP             | Tidak ada domain setelah '@'                                     |
-| Address   | "Jl. AB"                        | ✅ Valid   | BVA, EP        | 5 karakter, karakter umum diperbolehkan                          |
-| Address   | "Jln"                           | ❌ Invalid | BVA, EP        | Hanya 3 karakter, tidak memenuhi syarat                          |
-| Address   | "RT2"                           | ❌ Invalid | EP             | <5 karakter, tidak sesuai                                        |
-| Address   | "" (kosong)                     | ❌ Invalid | EP             | Kosong, tidak memenuhi syarat minimal karakter                   |
+| Field     | Parameter Validasi                     | Jenis Pengujian | Alasan Valid/Invalid                              |
+| --------- | -------------------------------------- | --------------- | ------------------------------------------------- |
+| Full Name | Minimal 3 huruf                        | BVA & EP        | Valid: panjang = 3, huruf semua; Invalid: <3      |
+| Username  | 5–15 karakter, huruf/angka             | BVA & EP        | Valid: 5/15 karakter; Invalid: 4/16 karakter      |
+| Password  | Minimal 6 karakter, kombinasi karakter | BVA & EP        | Valid: ≥6, kombinasi huruf/angka/simbol           |
+| Phone     | 10–13 digit angka                      | BVA & EP        | Valid: hanya digit, 10–13; Invalid: huruf/simbol  |
+| Email     | Format email                           | EP              | Valid: format lengkap; Invalid: tanpa '@', domain |
+| Address   | Minimal 5 karakter, bebas format umum  | BVA & EP        | Valid: ≥5 karakter; Invalid: kosong/<5 karakter   |
 
 
 # BOUNDARY VALUE ANALYSIS - REGISTER
