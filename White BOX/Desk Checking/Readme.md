@@ -1,3 +1,4 @@
 # Dokumentasi Pengujian menggunakan Desk Checking
-
-📌 [Lihat Dokumentasi Testing disini](HasilTes.md)  
+---
+## 1. Barang
+📌 [Lihat Dokumentasi Testing disini](Barang/HasilUji.md)  
