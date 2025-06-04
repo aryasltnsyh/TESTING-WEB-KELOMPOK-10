@@ -7,3 +7,7 @@
 ## 2. Kategori
 📌 [Lihat Dokumentasi Testing disini](Kategori/HasilUji.md)  
 ---
+
+## 3. Laporan / Nota
+📌 [Lihat Dokumentasi Testing disini](Laporan/HasilUji.md)  
+---
