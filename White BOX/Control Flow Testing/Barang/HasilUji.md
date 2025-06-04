@@ -35,4 +35,11 @@ function add_produk($add_produk)
 }
 ```
 
+| Kondisi Yang Diuji                                                      | Hasil Yang Diharapkan                                                            | Hasil Aktual | Status |
+| ----------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------------ | ------ |
+| Fungsi `add_produk()` dipanggil                                         | Fungsi mengeksekusi langkah-langkah pengecekan kategori dan insert data          | Sesuai       | ✅      |
+| `mysqli_num_rows($result_cek_kategori) > 0` (kategori ditemukan)        | Data produk ditambahkan ke database, return > 0                                  | Sesuai       | ✅      |
+| `mysqli_num_rows($result_cek_kategori) == 0` (kategori tidak ditemukan) | Tidak ada data dimasukkan, tidak return nilai atau return 0                      | Sesuai       | ✅      |
+| Koneksi DB gagal / query gagal (`mysqli_query` gagal)                   | Fungsi berhenti atau return error                                                | Sesuai       | ✅      |
+| Salah satu field input kosong (misalnya `$stok = ""`)                   | Query tetap dijalankan, tergantung validasi form (belum di-handle di fungsi ini) | Sesuai       | ✅      |
 
