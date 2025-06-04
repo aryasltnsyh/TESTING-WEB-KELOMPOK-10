@@ -55,12 +55,6 @@ function add_produk($add_produk)
 ```
 
 
-| Path ID | Jalur Eksekusi                    | Kondisi Yang Diuji                                 | Hasil Yang Diharapkan             | Status |
-| ------- | --------------------------------- | -------------------------------------------------- | --------------------------------- | ------ |
-| **P1**  | (1) → (2) → (3) → (5) → (6) → (7) | Semua input valid, kategori dari dropdown          | Produk berhasil disimpan ke DB    | ✅      |
-| **P2**  | (1) → (2) → (3 gagal)             | Query cek kategori gagal karena koneksi DB         | Fungsi gagal atau error ditangani | ✅      |
-| **P3**  | (1) → (2) → (3) → (5) → (6 gagal) | Insert produk gagal (misalnya karena duplikasi ID) | Return 0 atau muncul error        | ✅      |
-
 ---
 ## 2. Edit Barang
 ```php
