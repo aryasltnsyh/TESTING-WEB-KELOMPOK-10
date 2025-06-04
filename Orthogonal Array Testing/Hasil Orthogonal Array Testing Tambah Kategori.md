@@ -1,12 +1,13 @@
+# Orthogonal Array Testing (OAT) - Fitur Update Kategori
 
-| TC ID | Deskripsi                          | Input               | Expected Result                                | Actual Result               | Status Uji |
-|-------|------------------------------------|----------------------|------------------------------------------------|------------------------------|------------|
-| TC 1  | Tambah kategori valid              | Obat Ibu Hamil       | Kategori berhasil ditambahkan                 | Kategori berhasil ditambah  | ✅          |
-| TC 2  | Nama kategori 3 huruf (min valid)  | Min                  | Data diterima                                 | Data diterima               | ✅          |
-| TC 3  | Nama kategori 15 huruf (maks valid)| A...Z (15 huruf)     | Data diterima                                 | Data diterima               | ✅          |
-| TC 4  | Nama kategori 2 huruf              | Mi                   | Validasi muncul: "Minimal 3 karakter"         | Data diterima               | ❌          |
-| TC 5  | Nama kategori > 15 karakter        | NamaKategoriSangat   | Validasi muncul: "Maksimal 15 karakter"       | Data diterima               | ❌          |
-| TC 6  | Nama kategori kosong               |                      | Validasi muncul: "Nama kategori wajib diisi"  | Data diterima (kosong)      | ❌          |
-| TC 7  | Nama kategori hanya simbol         | @@@###               | Validasi muncul: "Nama tidak boleh simbol saja"| Data diterima              | ❌          |
-| TC 8  | Nama kategori duplikat             | Dewasa               | Validasi muncul: "Kategori sudah tersedia"    | Data diterima               | ❌          |
-| TC 9  | Nama kategori simbol + duplikat    | @@@Dewasa@@@         | Validasi muncul: "Format tidak valid & duplikat" | Data diterima           | ❌          |
+| **TC ID** | **Panjang**   | **Isi**           | **Eksistensi** | **Expected Result**                    |
+|----------|----------------|-------------------|----------------|------------------------------------------------------------|
+| TC_01   | Valid (10)      | Huruf             | Baru           | ✅ Kategori berhasil ditambahkan (TC_KAT_01)               |
+| TC_02   | =3              | Huruf             | Baru           | ✅ Diterima (TC_KAT_02)                                    |
+| TC_03   | =15             | Huruf             | Baru           | ✅ Diterima (TC_KAT_03)                                    |
+| TC_04   | <3              | Huruf             | Baru           | ❌ Bug: Diterima, seharusnya minimal 3 karakter (TC_KAT_04)|
+| TC_05   | >15             | Huruf             | Baru           | ❌ Bug: Melebihi batas, seharusnya divalidasi (TC_KAT_05)  |
+| TC_06   | Kosong          | Kosong            | Baru           | ❌ Bug: Diterima walau wajib diisi (TC_KAT_06)             |
+| TC_07   | Valid (6)       | Simbol saja       | Baru           | ❌ Bug: Diterima, seharusnya ditolak (TC_KAT_07)           |
+| TC_08   | Valid (6)       | Huruf             | Duplikat       | ❌ Bug: Duplikat tidak divalidasi (TC_KAT_08)              |
+| TC_09   | Valid (6)       | Campuran huruf+angka | Baru        | ❌ Bug (diasumsikan): Campuran harus divalidasi jika hanya huruf diizinkan |
