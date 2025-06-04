@@ -5,7 +5,7 @@
 Halaman ini bertujuan untuk menampilkan data nota berdasarkan tanggal (tgl_input) yang dikirimkan melalui parameter $_GET['tanggal'].
 
 
-### b. Logika Insert & Fungsi
+### b. Logika & Fungsi
 | ![](nota.png) | ![](function_nota.png) |
 |------------------|---------------------|
 
