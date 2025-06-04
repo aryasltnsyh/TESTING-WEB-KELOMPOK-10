@@ -1,4 +1,4 @@
-# Orthogonal Array Testing (OAT) - Fitur Update Kategori
+# Tabel Hasil Pengujian(OAT) - Tambah Kategori
 
 | **TC ID** | **Panjang**   | **Isi**           | **Eksistensi** | **Expected Result**                    |
 |----------|----------------|-------------------|----------------|------------------------------------------------------------|
