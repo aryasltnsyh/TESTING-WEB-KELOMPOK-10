@@ -6,3 +6,19 @@ Form ini menangani proses penambahan barang baru. Ketika form dikirim (submit), 
 
 ### b. Logika Utama
 ![](add_produk.png) 
+
+### c. Flowchart
+Mulai
+  │
+  ├─> Apakah $_POST['submit'] ada?
+  │     │
+  │     ├─> Ya
+  │     │     └─> Panggil add_produk($_POST)
+  │     │            │
+  │     │            ├─> Return > 0?
+  │     │            │     ├─> Ya: Tampilkan alert "Berhasil", redirect
+  │     │            │     └─> Tidak: Tampilkan alert "Gagal", redirect
+  │     │
+  │     └─> Tidak → Lewati proses
+  │
+Selesai
