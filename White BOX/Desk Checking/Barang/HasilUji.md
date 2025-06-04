@@ -5,7 +5,7 @@
 Form ini menangani proses penambahan barang baru. Ketika form dikirim (submit), data dari $_POST dikirim ke fungsi add_produk() untuk ditambahkan ke database. Terdapat umpan balik berupa alert dan redirect.
 
 ### b. Logika Utama
-![](insert.png)    ![](add_produk.png) 
+![](insert.png) ![](add_produk.png) 
 
 ### c. Flowchart
 graph TD
