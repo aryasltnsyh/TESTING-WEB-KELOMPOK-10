@@ -17,7 +17,8 @@ Berikut merupakan rekap hasil pengujian regresi secara ringkas dalam bentuk tabe
 | 5  | Tambah Barang           | ✅     | Semua data tampil lengkap, format tabel rapi                                           | Sesuai                                                                 | ![image](https://github.com/user-attachments/assets/df5fd4e0-b667-4cc4-8edb-1bd24fa6e9d9)
 | 6  | Edit Barang    | ✅     | Status berubah di DB, flash message muncul `Berhasil Diupdate`                                             | Sesuai, tetapi jika username di kosongankan saja masuk                                    | ![image](https://github.com/user-attachments/assets/f096f16c-5ee5-4a23-9c17-f1f93f7923e8)
 | 7  | Hapus Barang            | ✅     | Tugas terhapus dari DB dan tabel, flash `Hapus data produk?`                                                 | Sudah sesuai                                                           | ![image](https://github.com/user-attachments/assets/9ee5385a-c0de-4f3f-be4b-acb557db808e)
-| 8  | Kasir                | ✅     | Kasir POS berfungsi dengan baik                                                  | Nama user masih muncul setelah logout                                  | ![image](https://github.com/user-attachments/assets/e72ebe7a-2f08-4495-aeec-9df888b5d347)
+| 8  | Kasir                | ✅     | Kasir POS berfungsi dengan baik                                                  | Sesuai sudah diperbaiki                                  | ![image](https://github.com/user-attachments/assets/e72ebe7a-2f08-4495-aeec-9df888b5d347)
+| 9  | Laporan                | ✅     | Laporan berfungsi dengan baik                                                  | Nama user masih muncul setelah logout                                  | ![image](https://github.com/user-attachments/assets/e72ebe7a-2f08-4495-aeec-9df888b5d347)
 
 
 
