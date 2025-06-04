@@ -73,3 +73,28 @@ function edit_produk($edit)
 | Query gagal dieksekusi (misal koneksi DB error)      | Fungsi gagal atau return 0                                 | Sesuai       | ✅      |
 | Salah satu field kosong (misalnya `stok = ""`)       | Query bisa gagal atau berhasil tergantung validasi di DB   | Sesuai       | ✅      |
 | `id_barang` tidak ditemukan di DB                    | Tidak ada baris diubah, `mysqli_affected_rows` = 0         | Sesuai       | ✅      |
+---
+
+## 3. Delete Barang
+```php
+<?php
+// Periksa apakah ada parameter ID yang diterima
+if (isset($_GET['id_barang'])) {
+    $id_barang = $_GET['id_barang'];
+
+    // Query SQL untuk menghapus data produk berdasarkan id_barang
+    $sql = "DELETE FROM produk WHERE id_barang = '$id_barang'";
+    $result = $conn->query($sql);
+    echo "<script>
+    window.location.href= 'index.php?page=barang';
+    </script>";
+}
+?>
+```
+| Kondisi Yang Diuji                           | Hasil Yang Diharapkan                                               | Hasil Aktual | Status |
+| -------------------------------------------- | ------------------------------------------------------------------- | ------------ | ------ |
+| `$_GET['id_barang']` tersedia                | Query `DELETE` dijalankan, redirect ke halaman barang               | Sesuai       | ✅      |
+| `$_GET['id_barang']` tidak tersedia          | Tidak ada aksi, halaman tetap/tidak terjadi error                   | Sesuai       | ✅      |
+| `id_barang` tidak ditemukan di database      | Query tetap jalan, tetapi tidak menghapus baris                     | Sesuai       | ✅      |
+| Query gagal (misalnya koneksi DB bermasalah) | Tidak ada baris terhapus, bisa terjadi error (jika tidak ditangani) | Sesuai       | ✅      |
+
