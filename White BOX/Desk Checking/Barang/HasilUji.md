@@ -8,17 +8,9 @@ Form ini menangani proses penambahan barang baru. Ketika form dikirim (submit), 
 ![](add_produk.png) 
 
 ### c. Flowchart
-Mulai
-  │
-  ├─> Apakah $_POST['submit'] ada?
-  │     │
-  │     ├─> Ya
-  │     │     └─> Panggil add_produk($_POST)
-  │     │            │
-  │     │            ├─> Return > 0?
-  │     │            │     ├─> Ya: Tampilkan alert "Berhasil", redirect
-  │     │            │     └─> Tidak: Tampilkan alert "Gagal", redirect
-  │     │
-  │     └─> Tidak → Lewati proses
-  │
-Selesai
+graph TD
+    A(Mulai) --> B{$_POST['submit'] ada?}
+    B -- Ya --> C{add_produk > 0?}
+    C -- Ya --> D[Alert 'Berhasil' + Redirect]
+    C -- Tidak --> E[Alert 'Gagal' + Redirect]
+    B -- Tidak --> F[Stop]
