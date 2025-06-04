@@ -1,4 +1,4 @@
-# Tabel Hasil Pengujian – Tambah Barang #
+# Tabel Hasil Pengujian (OAT) – Tambah Barang #
 
 | Test Case | Nama Kategori    | Nama Barang     | Stok         | Harga Jual     | Harga Beli     | Hasil yang Diharapkan                              | Hasil Aktual          | Status     |
 |-----------|------------------|------------------|--------------|----------------|----------------|----------------------------------------------------|------------------------|------------|
