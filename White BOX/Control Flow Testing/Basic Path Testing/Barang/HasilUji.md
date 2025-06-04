@@ -1,5 +1,6 @@
 ## 1. Insert Barang
-
+## Flow Diagram
+```
 (1) Mulai
   |
   v
@@ -16,6 +17,8 @@
   |
   v
 (6) return hasil insert
+```
+
 
 | Path ID | Jalur Eksekusi                    | Kondisi Yang Diuji                                 | Hasil Yang Diharapkan             | Status |
 | ------- | --------------------------------- | -------------------------------------------------- | --------------------------------- | ------ |
