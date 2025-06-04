@@ -12,7 +12,7 @@
 📌 [Lihat Dokumentasi Testing disini](Penjualan/HasilUji.md)  
 ---
 
-## 3. Laporan / Nota
+## 4. Laporan / Nota
 📌 [Lihat Dokumentasi Testing disini](Laporan/HasilUji.md)  
 ---
 
