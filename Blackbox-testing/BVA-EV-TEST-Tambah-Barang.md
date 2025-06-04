@@ -41,3 +41,24 @@
 | TC_TB_17  | Harga jual = 0 (promo / gratis)                     | Harga Jual: 0                           | Barang tetap bisa ditambahkan                    |Data diterima dan disimpan| ✅     |
 | TC_TB_18  | Harga beli = 0                                      | Harga Beli: 0                           | Barang tetap bisa ditambahkan                    |Data diterima dan disimpan| ✅     |
 | TC_TB_19  | Harga jual lebih kecil dari harga beli              | Harga Beli: 30000, Harga Jual: 20000    | Validasi muncul: "Harga jual tidak boleh < harga beli" |Data diterima dan disimpan| ❌     |
+
+# Behavior Testing
+### ✏️ EDIT BARANG
+
+| TC ID     | Deskripsi                                      | Langkah Uji                                                                 | Expected Result                                       | Actual Result                        | Status Uji |
+|-----------|------------------------------------------------|------------------------------------------------------------------------------|--------------------------------------------------------|--------------------------------------|------------|
+| TC_BE_01  | Edit barang dengan data baru                   | Klik "Edit" → ubah nama jadi "Oskadon" → klik "Simpan"                 | Data barang berubah jadi "oskadon" di daftar       | Data berubah sesuai input            | ✅         |
+| TC_BE_02  | Form edit menampilkan data lama                | Klik "Edit" pada barang "Oskadon"                                       | Form terisi otomatis dengan data "Oskadon"          | Form terisi sesuai data              | ✅         |
+| TC_BE_03  | Edit lalu klik batal                           | Klik "Edit" → ubah nama jadi "Mixagrip" → klik "Batal"                        | Tidak ada perubahan data pada daftar barang            | Data tetap "Oskadon"              | ✅         |
+| TC_BE_04  | Edit harga jual < harga beli                   | Harga beli: 30000 → ubah harga jual jadi 20000                             | Validasi muncul: "Harga jual tidak boleh < harga beli" | Data diterima dan disimpan               | ❌         |
+
+---
+
+### 🗑️ DELETE BARANG
+
+| TC ID     | Deskripsi                                      | Langkah Uji                                                                 | Expected Result                                       | Actual Result                        | Status Uji |
+|-----------|------------------------------------------------|------------------------------------------------------------------------------|--------------------------------------------------------|--------------------------------------|------------|
+| TC_BE_05  | Klik tombol hapus                              | Klik ikon "Hapus" pada barang                                              | Muncul popup konfirmasi: "Yakin ingin menghapus?"      | Popup muncul                         | ✅         |
+| TC_BE_06  | Konfirmasi hapus barang                        | Klik "Hapus" → klik "Ya"                                                   | Barang terhapus dan tidak tampil di daftar             | Data barang  tidak terhapus              | ❌         |
+| TC_BE_07  | Batalkan penghapusan                           | Klik "Hapus" → klik "Tidak"                                                | Barang tetap ada di daftar                             | Barang tetap muncul                  | ✅         |
+| TC_BE_08  | Hapus barang lalu refresh halaman              | Hapus barang "Oskadon" → refresh halaman                                | Barang tetap tidak muncul setelah refresh              | Data barang masih ada  | ❌         |
