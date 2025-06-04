@@ -30,7 +30,4 @@ graph TD
 | 1  | ❌ Tidak            | -                            | -                | Tidak ada query, `totalKeuntungan = 0`           | Halaman tetap tenang, tidak ada hasil ditampilkan |
 | 2  | ✅ Ya               | ✅ Ya                         | ✅ Ada            | Data nota ditampilkan, total keuntungan dihitung | Normal                                            |
 | 3  | ✅ Ya               | ✅ Ya                         | ❌ Tidak ada      | Tidak ada hasil, `totalKeuntungan = 0`           | Aman, tapi bisa beri notifikasi kosong            |
-| 4  | ✅ Ya               | ❌ Format Salah (e.g. `abcd`) | ❌ Error / kosong | Tidak ada hasil, atau bisa error silent          | Perlu validasi tanggal                            |
-| 5  | ✅ Ya               | Kosong/null                  | ❌ Tidak          | Sama seperti tidak dikirim                       | Diperlakukan seperti TC 1                         |
-
 ---
