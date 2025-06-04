@@ -70,15 +70,15 @@ graph TD
 | 5  | ✅ Ya               | ✅       | `"Dewasa"` (duplikat)       | ✅ Ya                      | Alert "Berhasil mengupdate kategori, redirect         |
 ---
 
-## 3. Hapus Kategori
+## 3. Delete Kategori
 
 ---
 ### a. Deskripsi Fungsional
 Menghapus satu entri kategori dari tabel kategori berdasarkan parameter id_kategori yang dikirim melalui URL (metode GET).
 
 
-### b. Logika Insert & Fungsi
- ![](delete.png)  
+### b. Logika Delete 
+ ![](Delete.png)  
 
 
 ### c. Alur Logika Gabungan
