@@ -23,6 +23,14 @@ graph TD
     H -- Ya --> I[Alert sukses + redirect]
     H -- Tidak --> J[Alert gagal + redirect]
     E -- Tidak --> K[Return 0 → Alert gagal + redirect]
+```
+
+### c. Test Case (UI + Backend)
+| TC | Submit? | Nama Kategori Valid? | Insert DB Berhasil? | Expected Output                      |
+| -- | ------- | -------------------- | ------------------- | ------------------------------------ |
+| 1  | ❌ Tidak | -                    | -                   | Tidak terjadi apa-apa                |
+| 2  | ✅ Ya    | ❌ Tidak valid        | ❌ Tidak jalan       | Alert "Gagal menambahkan produk!"    |
+| 3  | ✅ Ya    | ✅ Ya                 | ✅ Berhasil          | Alert "Berhasil menambahkan produk!" |
 
 
-### c. Alur Logika Gabungan
+
