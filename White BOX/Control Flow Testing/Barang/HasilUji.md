@@ -1,4 +1,4 @@
-### Insert Barang
+## 1. Insert Barang
 ```php
 function add_produk($add_produk)
 {
