@@ -23,7 +23,7 @@ graph TD
     G -- Tidak --> I[Alert gagal + redirect]
 ```
 
-### c. Test Case (UI + Backend)
+### d. Test Case 
 | TC | Submit? | Insert DB Berhasil? | Expected Output                      |
 | -- | ------- | ------------------- | ------------------------------------ |
 | 1  | ❌ Tidak | -                   | Tidak terjadi apa-apa                |
@@ -39,4 +39,23 @@ Memungkinkan pengguna untuk mengubah informasi barang yang sudah ada di database
 | ![](edit.png) | ![](edit_produk.png) |
 |------------------|---------------------|
 
+### c. Alur Logika Gabungan
+```
+graph TD
+    A(Mulai - User membuka halaman edit) --> B[Ambil id_barang via $_GET]
+    B --> C[Tampilkan data produk di form]
+    C --> D{Klik Submit?}
+    D -- Tidak --> E[Selesai, tidak ada aksi]
+    D -- Ya --> F[edit_produk($_POST)]
+    F --> G[UPDATE produk di DB]
+    G --> H{UPDATE berhasil?}
+    H -- Ya (return > 0) --> I[Alert "Berhasil update"]
+    H -- Tidak (return <= 0) --> J[Alert "Gagal update"]
+```
 
+### d. Test Case 
+| TC | Submit? | Data Berubah? | Expected Output                      |
+| -- | ------- | ------------- | ------------------------------------ |
+| 1  | ❌ Tidak | -             | Tidak ada aksi, halaman hanya tampil |
+| 2  | ✅ Ya    | Ya            | Alert “Berhasil mengupdate produk!”  |
+| 3  | ✅ Ya    | Tidak         | Alert “Gagal mengupdate produk!”     |
