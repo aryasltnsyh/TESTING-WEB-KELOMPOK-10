@@ -35,4 +35,8 @@ graph TD
 ### a. Deskripsi Fungsional
 Memungkinkan pengguna untuk mengubah informasi barang yang sudah ada di database, seperti nama barang, stok, harga jual, dan harga beli.
 
+### b. Logika Edit & Fungsi
+| ![](edit.png) | ![](edit_produk.png) |
+|------------------|---------------------|
+
 
