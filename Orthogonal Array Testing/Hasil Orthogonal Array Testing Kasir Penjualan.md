@@ -1,4 +1,4 @@
-# Orthogonal Array Testing (OAT) - Transaksi Penjualan
+# Tabel Hasil Pengujian (OAT) - Transaksi Penjualan
 
 | **TC ID** | **Nama Barang** | **Jumlah** | **Bayar** | **Expected Result** |
 |----------|------------------|------------|-----------|------------------------------------|
