@@ -1,5 +1,5 @@
 ## 1. Insert Barang
-## Flow Diagram
+### Flow Diagram
 ```
 (1) Mulai
   |
