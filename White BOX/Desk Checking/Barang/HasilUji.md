@@ -59,3 +59,27 @@ graph TD
 | 1  | ❌ Tidak | -             | Tidak ada aksi, halaman hanya tampil |
 | 2  | ✅ Ya    | Ya            | Alert “Berhasil mengupdate produk!”  |
 | 3  | ✅ Ya    | Tidak         | Alert “Gagal mengupdate produk!”     |
+
+---
+## 3. Delete Barang
+### a. Deskripsi Fungsional
+Menghapus data produk dari database berdasarkan id_barang yang dikirimkan melalui parameter URL ($_GET['id_barang']).
+
+### b. Logika Delete
+![](delete.png)
+
+### c. Alur Logika
+```
+graph TD
+    A(Mulai - Halaman Dihubungi) --> B{Ada $_GET['id_barang']?}
+    B -- Tidak --> C(Selesai - Tidak terjadi apa-apa)
+    B -- Ya --> D(Hapus data produk dari DB)
+    D --> E(Redirect ke index.php?page=barang)
+```
+
+### d. Test Case
+| TC | `$_GET['id_barang']` Tersedia? | ID Valid di DB? | Expected Output                                          |
+| -- | ------------------------------ | --------------- | -------------------------------------------------------- |
+| 1  | ❌ Tidak                        | -               | Tidak terjadi apa-apa                                    |
+| 2  | ✅ Ya                           | ✅ Ya            | Produk dihapus, redirect ke halaman barang               |
+| 3  | ✅ Ya                           | ❌ Tidak         | Tidak ada yang dihapus, tetap redirect ke halaman barang |
