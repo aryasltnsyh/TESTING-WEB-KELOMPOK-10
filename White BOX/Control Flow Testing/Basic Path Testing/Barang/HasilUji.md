@@ -110,45 +110,39 @@ function edit_produk($edit)
 
 ## 3. Delete Barang
 ```php
-function edit_produk($edit)
-{
-    global $conn;
+<?php
+// Periksa apakah ada parameter ID yang diterima
+if (isset($_GET['id_barang'])) {
+    $id_barang = $_GET['id_barang'];
 
-    //ambil data dari form edit
-    $id_barang = $edit["id_barang"];
-    $nama_barang = $edit["nama_barang"];
-    $stok = $edit["stok"];
-    $harga_jual = $edit["harga_jual"];
-    $harga_beli = $edit["harga_beli"];
-
-    //query insert data
-
-    $query = "UPDATE produk SET nama_barang='$nama_barang', stok='$stok', harga_jual='$harga_jual', harga_beli='$harga_beli' WHERE id_barang='$id_barang'";
-    mysqli_query($conn, $query);
-
-    return mysqli_affected_rows($conn);
+    // Query SQL untuk menghapus data produk berdasarkan id_barang
+    $sql = "DELETE FROM produk WHERE id_barang = '$id_barang'";
+    $result = $conn->query($sql);
+    echo "<script>
+    window.location.href= 'index.php?page=barang';
+    </script>";
 }
+?>
 ```
 ### Flow Diagram
 ```
 (1) Mulai
   |
+[Apakah $_GET['id_barang'] diset?]
+  |                 \
+  |                  v
+  |              (2) Tidak diset → End
   v
-(2) Ambil input dari form
+(3) Ambil id_barang dari $_GET
   |
   v
-(3) Eksekusi query UPDATE produk
+(4) Eksekusi query DELETE
   |
-  v
 [Apakah query berhasil?]
   |             \
   |              v
-  |         (4) Query gagal → return 0
+  |         (5) Query gagal → End
   v
-(5) Cek apakah ada baris berubah?
-  |             \
-  |              v
-  |         (6) Tidak ada baris berubah → return 0
-  v
-(7) return jumlah baris terpengaruh (> 0)
+(6) Redirect ke halaman barang
+
 ```
