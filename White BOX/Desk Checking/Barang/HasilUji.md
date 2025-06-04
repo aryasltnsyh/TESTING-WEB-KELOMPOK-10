@@ -10,7 +10,7 @@ Fitur ini digunakan untuk menambahkan produk baru melalui form input. Data yang 
 |------------------|---------------------|
 
 
-### c. Flowchart
+### c. Alur Logika Gabungan
 ```
 graph TD
     A(Mulai - User Isi Form) --> B[Klik Submit]
@@ -23,3 +23,6 @@ graph TD
     H -- Ya --> I[Alert sukses + redirect]
     H -- Tidak --> J[Alert gagal + redirect]
     E -- Tidak --> K[Return 0 → Alert gagal + redirect]
+
+
+### c. Alur Logika Gabungan
