@@ -8,6 +8,11 @@
 📌 [Lihat Dokumentasi Testing disini](Kategori/HasilUji.md)  
 ---
 
+## 3. Penjualan / Kasir
+📌 [Lihat Dokumentasi Testing disini](Penjualan/HasilUji.md)  
+---
+
 ## 3. Laporan / Nota
 📌 [Lihat Dokumentasi Testing disini](Laporan/HasilUji.md)  
 ---
+
