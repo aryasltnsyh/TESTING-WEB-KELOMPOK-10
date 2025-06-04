@@ -8,31 +8,9 @@
 
 Aplikasi yang diuji
 
-- Nama Aplikasi :
-- Teknologi :
-- Fitur yang di uji:
-- Tujuan Pengujian:
-
----
-
-Penerapan pada website: 
-Pengujian ini dilakukan pada fitur login website. Login memiliki beberapa kombinasi input yang mungkin, seperti:
-Format username
-Format password
-Jenis browser
-
-Jika kita menguji semua kombinasi, akan ada 3 × 3 × 3 = 27 test case. Dengan OAT, kita hanya perlu 9 test case yang representatif.
-
----
-
-Faktor dan Level
-| **Faktor**          | **Level 1** | **Level 2** | **Level 3**                 |
-| ------------------- | ----------- | ----------- | --------------------------- |
-| **Username Format** | Valid       | Kosong      | Karakter aneh (simbol, dll) |
-| **Password Format** | Valid       | Salah       | Kosong                      |
-| **Browser**         | Chrome      | Firefox     | Edge                        |
-
----
+- Nama Aplikasi : Aplikasi PharmaPOS
+- Fitur yang di uji: Tambah barang,Tambah Kategori,Dan Kasir Penjualan
+- Tujuan Pengujian: Untuk Mengetahui tingkat Kualitas Aplikasi tsb
 
 
 
