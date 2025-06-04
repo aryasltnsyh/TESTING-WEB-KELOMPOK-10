@@ -2,18 +2,24 @@
 
 ---
 ### a. Deskripsi Fungsional
-Form ini menangani proses penambahan barang baru. Ketika form dikirim (submit), data dari $_POST dikirim ke fungsi add_produk() untuk ditambahkan ke database. Terdapat umpan balik berupa alert dan redirect.
+Fitur ini digunakan untuk menambahkan produk baru melalui form input. Data yang dikirim oleh user akan diproses oleh fungsi `add_produk()` yang bertugas menyimpan ke database setelah memvalidasi bahwa `nama_kategori` yang dipilih valid (tersedia di tabel `kategori`).
 
-### b. Logika Utama
-|Insert Produk    | Fungsi add_produk   |
+
+### b. Logika Insert & Fungsi
 | ![](insert.png) | ![](add_produk.png) |
 |------------------|---------------------|
 
 
 ### c. Flowchart
+```mermaid
 graph TD
-    A(Mulai) --> B{$_POST['submit'] ada?}
-    B -- Ya --> C{add_produk > 0?}
-    C -- Ya --> D[Alert 'Berhasil' + Redirect]
-    C -- Tidak --> E[Alert 'Gagal' + Redirect]
-    B -- Tidak --> F[Stop]
+    A(Mulai - User Isi Form) --> B[Klik Submit]
+    B --> C[insert/index.php: Cek isset($_POST['submit'])]
+    C --> D[add_produk($_POST)]
+    D --> E{Kategori valid?}
+    E -- Ya --> F[Ambil id_kategori]
+    F --> G[Insert data produk]
+    G --> H{Insert sukses?}
+    H -- Ya --> I[Alert sukses + redirect]
+    H -- Tidak --> J[Alert gagal + redirect]
+    E -- Tidak --> K[Return 0 → Alert gagal + redirect]
