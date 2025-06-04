@@ -30,6 +30,8 @@ graph TD
 | 2  | ✅ Ya    | ✅ Ya                | Alert "Berhasil menambahkan produk!" |
 | 3  | ✅ Ya    | ❌ Tidak             | Alert "Gagal menambahkan produk!"    |
 
+---
+## 2. Edit Barang
 
 
 
