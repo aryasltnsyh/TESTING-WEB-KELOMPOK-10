@@ -10,7 +10,7 @@ Memiliki 3 fungsi:
 
 
 
-### b. Logika Insert & Fungsi
+### b. Logika & Fungsi
 ```php
 function getProduk()
 {
