@@ -60,3 +60,95 @@ function add_produk($add_produk)
 | **P1**  | (1) → (2) → (3) → (5) → (6) → (7) | Semua input valid, kategori dari dropdown          | Produk berhasil disimpan ke DB    | ✅      |
 | **P2**  | (1) → (2) → (3 gagal)             | Query cek kategori gagal karena koneksi DB         | Fungsi gagal atau error ditangani | ✅      |
 | **P3**  | (1) → (2) → (3) → (5) → (6 gagal) | Insert produk gagal (misalnya karena duplikasi ID) | Return 0 atau muncul error        | ✅      |
+
+---
+## 2. Edit Barang
+```php
+function edit_produk($edit)
+{
+    global $conn;
+
+    //ambil data dari form edit
+    $id_barang = $edit["id_barang"];
+    $nama_barang = $edit["nama_barang"];
+    $stok = $edit["stok"];
+    $harga_jual = $edit["harga_jual"];
+    $harga_beli = $edit["harga_beli"];
+
+    //query insert data
+
+    $query = "UPDATE produk SET nama_barang='$nama_barang', stok='$stok', harga_jual='$harga_jual', harga_beli='$harga_beli' WHERE id_barang='$id_barang'";
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+```
+### Flow Diagram
+```
+(1) Mulai
+  |
+  v
+(2) Ambil input dari form
+  |
+  v
+(3) Eksekusi query UPDATE produk
+  |
+  v
+[Apakah query berhasil?]
+  |             \
+  |              v
+  |         (4) Query gagal → return 0
+  v
+(5) Cek apakah ada baris berubah?
+  |             \
+  |              v
+  |         (6) Tidak ada baris berubah → return 0
+  v
+(7) return jumlah baris terpengaruh (> 0)
+```
+---
+
+## 3. Delete Barang
+```php
+function edit_produk($edit)
+{
+    global $conn;
+
+    //ambil data dari form edit
+    $id_barang = $edit["id_barang"];
+    $nama_barang = $edit["nama_barang"];
+    $stok = $edit["stok"];
+    $harga_jual = $edit["harga_jual"];
+    $harga_beli = $edit["harga_beli"];
+
+    //query insert data
+
+    $query = "UPDATE produk SET nama_barang='$nama_barang', stok='$stok', harga_jual='$harga_jual', harga_beli='$harga_beli' WHERE id_barang='$id_barang'";
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+```
+### Flow Diagram
+```
+(1) Mulai
+  |
+  v
+(2) Ambil input dari form
+  |
+  v
+(3) Eksekusi query UPDATE produk
+  |
+  v
+[Apakah query berhasil?]
+  |             \
+  |              v
+  |         (4) Query gagal → return 0
+  v
+(5) Cek apakah ada baris berubah?
+  |             \
+  |              v
+  |         (6) Tidak ada baris berubah → return 0
+  v
+(7) return jumlah baris terpengaruh (> 0)
+```
