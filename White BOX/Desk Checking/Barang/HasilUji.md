@@ -16,21 +16,20 @@ graph TD
     A(Mulai - User Isi Form) --> B[Klik Submit]
     B --> C[insert/index.php: Cek isset($_POST['submit'])]
     C --> D[add_produk($_POST)]
-    D --> E{Kategori valid?}
-    E -- Ya --> F[Ambil id_kategori]
-    F --> G[Insert data produk]
-    G --> H{Insert sukses?}
-    H -- Ya --> I[Alert sukses + redirect]
-    H -- Tidak --> J[Alert gagal + redirect]
-    E -- Tidak --> K[Return 0 → Alert gagal + redirect]
+    D --> E[Ambil id_kategori dari nama_kategori]
+    E --> F[Insert data produk ke DB]
+    F --> G{Insert berhasil?}
+    G -- Ya --> H[Alert sukses + redirect]
+    G -- Tidak --> I[Alert gagal + redirect]
 ```
 
 ### c. Test Case (UI + Backend)
-| TC | Submit? | Nama Kategori Valid? | Insert DB Berhasil? | Expected Output                      |
-| -- | ------- | -------------------- | ------------------- | ------------------------------------ |
-| 1  | ❌ Tidak | -                    | -                   | Tidak terjadi apa-apa                |
-| 2  | ✅ Ya    | ❌ Tidak valid        | ❌ Tidak jalan       | Alert "Gagal menambahkan produk!"    |
-| 3  | ✅ Ya    | ✅ Ya                 | ✅ Berhasil          | Alert "Berhasil menambahkan produk!" |
+| TC | Submit? | Insert DB Berhasil? | Expected Output                      |
+| -- | ------- | ------------------- | ------------------------------------ |
+| 1  | ❌ Tidak | -                   | Tidak terjadi apa-apa                |
+| 2  | ✅ Ya    | ✅ Ya                | Alert "Berhasil menambahkan produk!" |
+| 3  | ✅ Ya    | ❌ Tidak             | Alert "Gagal menambahkan produk!"    |
+
 
 
 
