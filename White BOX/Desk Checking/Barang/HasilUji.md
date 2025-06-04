@@ -11,6 +11,7 @@ Fitur ini digunakan untuk menambahkan produk baru melalui form input. Data yang 
 
 
 ### c. Flowchart
+```
 graph TD
     A(Mulai - User Isi Form) --> B[Klik Submit]
     B --> C[insert/index.php: Cek isset($_POST['submit'])]
