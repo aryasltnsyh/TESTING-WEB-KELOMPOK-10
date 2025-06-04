@@ -6,10 +6,10 @@ Regression testing adalah jenis pengujian perangkat lunak (software testing) yan
 
 Fitur yang Diuji: 
 
--Kategori
--Laporan
--Penjualan
--Tambah Barang
+- Kategori
+- Laporan
+- Penjualan
+- Tambah Barang
 
 ---
 Tujuan Memastikan bahwa semua fitur lama tetap berjalan dengan versi stabil setelah perubahan sistem.
