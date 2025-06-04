@@ -31,13 +31,19 @@ Memiliki 3 fungsi:
 ### c. Alur Logika Gabungan
 ```
 graph TD
-    A(Halaman Kasir Dibuka) --> B[Ambil semua produk]
+graph TD
+    A(Halaman Kasir Dibuka) --> B[Ambil daftar produk untuk dropdown]
     B --> C{Form input_barang disubmit?}
-    C -- Ya --> D[Ambil id_barang & jumlah]
-    D --> E[Ambil harga_jual dari produk]
-    E --> F[Hitung total = harga * jumlah]
-    F --> G[Cek data kasir, update atau insert]
-    G --> B
+    C -- Ya --> D[Ambil nama_barang & jumlah]
+    D --> E{Nama barang dipilih (tidak kosong)?}
+    E -- Tidak --> F[Tampilkan alert: Pilih nama barang]
+    E -- Ya --> G[Cari produk berdasarkan nama_barang]
+    G --> H{Produk ditemukan?}
+    H -- Tidak --> I[Tampilkan alert: Produk tidak ditemukan]
+    H -- Ya --> J[Ambil id_barang dan harga_jual]
+    J --> K[Hitung total = harga_jual × jumlah]
+    K --> L[INSERT/UPDATE data ke tabel kasir]
+    L --> M[Selesai]
 
     C -- Tidak --> H{Tombol Bayar diklik?}
     H -- Ya --> I[Ambil input bayar]
@@ -56,21 +62,21 @@ graph TD
 
 ### d. Test Case 
 ### Input Barang
-| TC | `id_barang` Valid? | `jumlah` Valid? | Output                               | Catatan                  |
-| -- | ------------------ | --------------- | ------------------------------------ | ------------------------ |
-| 1  | ✅ Ya               | ✅ Ya            | Data ditambahkan/diupdate ke `kasir` | Normal                   |
-| 2  | ❌ Tidak            | ✅ Ya            | Gagal silent / error dari DB         | Harus validasi ID        |
-| 3  | ✅ Ya               | ❌ (negatif)     | Total bisa negatif / error logika    | Tidak divalidasi negatif |
-| 4  | Kosong             | ✅ Ya            | Tidak terjadi input                  | Butuh validasi wajib isi |
-| 5  | ✅ Ya               | Kosong/null     | Gagal / error perhitungan            | `jumlah * harga` gagal   |
+| TC | Nama Barang Dipilih | Jumlah | Output                                                 | 
+| -- | ------------------- | ------ | ------------------------------------------------------ | 
+| 1  | ✅                  | 2      | Data berhasil masuk/update ke kasir dengan total benar | 
+| 2  | ✅                  | -1     | Data masuk, total bisa negatif                         | 
+| 4  | ✅                  | 0      | alert "field harus di isi"                             |      
+| 5  | ✅ "Beras"           | "abc"  | Tidak muncul di field "jumla                           |
+
 
 ### Proses Pembayaran
 | TC | `bayar` Valid? | Total Harga Ada?      | Output                                              | Catatan                              |
 | -- | -------------- | --------------------- | --------------------------------------------------- | ------------------------------------ |
 | 1  | ✅ Cukup        | ✅ Ada                 | Nota masuk, stok dikurangi, kasir dikosongkan       | Normal                               |
 | 2  | ✅ Kurang       | ✅ Ada                 | Alert "Jumlah pembayaran tidak mencukupi"           | Tidak memproses                      |
-| 3  | ❌ Bukan angka  | ✅ Ada                 | Alert: "Input pembayaran harus berupa angka."       | Aman, ada validasi angka             |
-| 4  | Kosong/null    | ✅ Ada                 | Alert sama seperti TC 3                             | Aman                                 |
+| 3  | ❌ Bukan angka  | ✅ Ada                 | Tidak muncul di field                               | Hanya angka saja yang bisa           |
+| 4  | Kosong/null    | ✅ Ada                 | Tidak ada respon apapun                               | Aman                                 |
 | 5  | ✅ Ya           | ❌ Tidak ada transaksi | Total = 0, semua tetap jalan tapi kembalian = bayar | Perlu validasi jika transaksi kosong |
 
 
