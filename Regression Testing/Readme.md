@@ -12,5 +12,5 @@ Fitur yang Diuji:
 - Tambah Barang
 
 ---
-Tujuan Memastikan bahwa semua fitur lama tetap berjalan dengan versi stabil setelah perubahan sistem.
-Dokumentasi Lengkap Lihat pengujian_testcases.md untuk rincian skenario uji
+- Tujuan Memastikan bahwa semua fitur lama tetap berjalan dengan versi stabil setelah perubahan sistem.
+- Dokumentasi Lengkap Lihat pengujian_testcases.md untuk rincian skenario uji
