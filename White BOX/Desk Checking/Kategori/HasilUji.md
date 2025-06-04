@@ -33,7 +33,7 @@ graph TD
 
 ---
 
-## 1. Edit Kategori
+## 2. Edit Kategori
 
 ---
 ### a. Deskripsi Fungsional
@@ -68,3 +68,32 @@ graph TD
 | 3  | ✅ Ya               | ✅       | `"Dewasa"` (tidak berubah)  | ❌ Tidak (0 rows affected) | Alert "Gagal mengupdate kategori, redirect            |
 | 4  | ✅ Ya               | ✅       | `""` (kosong)               | ✅ Ya                      | Alert "Berhasil mengupdate kategori, redirect         |
 | 5  | ✅ Ya               | ✅       | `"Dewasa"` (duplikat)       | ✅ Ya                      | Alert "Berhasil mengupdate kategori, redirect         |
+---
+
+## 3. Hapus Kategori
+
+---
+### a. Deskripsi Fungsional
+Menghapus satu entri kategori dari tabel kategori berdasarkan parameter id_kategori yang dikirim melalui URL (metode GET).
+
+
+### b. Logika Insert & Fungsi
+ ![](delete.png)  
+
+
+### c. Alur Logika Gabungan
+```
+graph TD
+    A(Halaman Dipanggil) --> B{GET id_kategori ada?}
+    B -- Tidak --> C(Halaman diam, tidak ada aksi)
+    B -- Ya --> D[Jalankan DELETE FROM kategori]
+    D --> E[Redirect ke halaman barang]
+
+```
+
+### d. Test Case 
+| TC | `id_kategori` Dikirim? | ID Valid di DB?             | Output                                        | Catatan                                   |
+| -- | ---------------------- | --------------------------- | --------------------------------------------- | ----------------------------------------- |
+| 1  | ❌ Tidak                | -                           | Tidak ada aksi                                | Tidak ada redirect, fungsi tidak jalan    |
+| 2  | ✅ Ya                   | ✅ Ya (tidak dipakai produk) | Kategori terhapus, redirect ke halaman barang | Normal - kondisi ideal                    |
+| 3  | ✅ Ya                   | ✅ Ya (dipakai di produk)    | Error: `Cannot delete or update a parent row` | Foreign key constraint aktif, gagal hapus |
