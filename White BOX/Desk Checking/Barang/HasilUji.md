@@ -32,6 +32,7 @@ graph TD
 
 ---
 ## 2. Edit Barang
-
+### a. Deskripsi Fungsional
+Memungkinkan pengguna untuk mengubah informasi barang yang sudah ada di database, seperti nama barang, stok, harga jual, dan harga beli.
 
 
