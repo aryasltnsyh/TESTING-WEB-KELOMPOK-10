@@ -15,11 +15,25 @@ function getProduk()
     return $produk;
 }
 ```
-| Kondisi Yang Diuji                     | Hasil Yang Diharapkan                        | Hasil Aktual                   | Status   |
-| -------------------------------------- | -------------------------------------------- | ------------------------------ | -------- |
-| Data produk tersedia di tabel `produk` | Mengembalikan array isi produk               | Sesuai                         | ✅        |
-| Tabel `produk` kosong                  | Mengembalikan array kosong                   | Sesuai                         | ✅        |
-| Query gagal (misal koneksi DB putus)   | Error atau `false` pada `mysqli_fetch_assoc` | Sesuai/tergantung implementasi | ✅ / ⚠️\* |
+### Flow Diagram
+```
+(1) Mulai
+  |
+(2) Jalankan query SELECT * FROM produk
+  |
+(3) Inisialisasi array $produk
+  |
+[Apakah hasil query memiliki baris?]
+     |            \
+    ya             tidak
+     |               \
+(4) Loop fetch row   (5) Lewati loop
+     |                   |
+     v                   v
+(6) Tambah ke array   (7) Return array kosong
+  |
+(8) Return array $produk
+```
 ---
 
 ## 2. getProdukById($id_barang)
@@ -35,11 +49,16 @@ function getProdukById($id_barang)
     return $row;
 }
 ```
-| Kondisi Yang Diuji                                | Hasil Yang Diharapkan                  | Hasil Aktual            | Status |
-| ------------------------------------------------- | -------------------------------------- | ----------------------- | ------ |
-| `id_barang` sesuai dengan data di DB              | Mengembalikan 1 array produk           | Sesuai                  | ✅      |
-| `id_barang` tidak ditemukan di tabel `produk`     | Mengembalikan `null`                   | Sesuai                  | ✅      |
-| Query gagal (misal koneksi putus / kesalahan SQL) | Kemungkinan `mysqli_fetch_assoc` error | Tergantung implementasi | ⚠️     |
+### Flow Diagram
+```
+(1) Mulai
+  |
+(2) Jalankan query SELECT * WHERE id_barang = ?
+  |
+(3) Ambil hasil 1 baris dari query
+  |
+(4) Return $row (hasil fetch atau null)
+```
 ---
 
 ## 3. inputBarangKasir($id_barang, $jumlah, $total)
@@ -64,12 +83,21 @@ function inputBarangKasir($id_barang, $jumlah, $total)
     mysqli_query($conn, $query);
 }
 ```
-| Kondisi Yang Diuji                            | Hasil Yang Diharapkan                                         | Hasil Aktual | Status |
-| --------------------------------------------- | ------------------------------------------------------------- | ------------ | ------ |
-| Barang sudah ada di tabel `kasir` (count > 0) | Query UPDATE jumlah dan total dilakukan pada barang yang sama | Sesuai       | ✅      |
-| Barang belum ada di tabel `kasir` (count = 0) | Query INSERT data barang baru ke tabel `kasir`                | Sesuai       | ✅      |
-| Query SELECT COUNT gagal                      | Berpotensi error / query UPDATE atau INSERT tidak dijalankan  | ⚠️           | ⚠️     |
-| Query UPDATE atau INSERT gagal                | Error tidak ditangani                                         | ⚠️           | ⚠️     |
+### Flow Diagram
+```
+(1) Mulai
+  |
+(2) Jalankan SELECT COUNT(*) FROM kasir WHERE id_barang = ?
+  |
+[Apakah count > 0?]
+   |           \
+  ya            tidak
+   |              \
+(3) Jalankan UPDATE   (4) Jalankan INSERT
+  |                   |
+(5) Selesai          (5) Selesai
+
+```
 ---
 
 ## 4. function hitungKembalian($bayar)
@@ -93,12 +121,23 @@ function hitungKembalian($bayar)
     }
 }
 ```
-| Kondisi Yang Diuji                            | Hasil Yang Diharapkan                                       | Hasil Aktual | Status |
-| --------------------------------------------- | ----------------------------------------------------------- | ------------ | ------ |
-| Query SELECT SUM(total) sukses                | Total dari tabel `kasir` berhasil didapatkan                | Sesuai       | ✅      |
-| Query SELECT SUM(total) gagal                 | `mysqli_fetch_assoc` mungkin error / `total` null           | ⚠️           | ⚠️     |
-| `$bayar` adalah angka                         | Menghitung kembalian `bayar - total` dan return             | Sesuai       | ✅      |
-| `$bayar` bukan angka (misal string non-digit) | Return pesan error `"Input pembayaran harus berupa angka."` | Sesuai       | ✅      |
+### Flow Diagram
+```
+(1) Mulai
+  |
+(2) Jalankan query SELECT SUM(total) AS total FROM kasir
+  |
+(3) Ambil total dari hasil query
+  |
+(4) Cek apakah $bayar adalah angka?
+  |         \
+ ya          tidak
+  |           \
+(5) Hitung kembalian = bayar - total (return hasil)
+  |           
+(6) Return pesan error "Input pembayaran harus berupa angka."
+
+```
 ---
 
 ## 5. function masukkanDataNota()
@@ -111,11 +150,13 @@ function masukkanDataNota()
     mysqli_query($conn, $query);
 }
 ```
-| Kondisi Yang Diuji                                | Hasil Yang Diharapkan                                     | Hasil Aktual | Status |
-| ------------------------------------------------- | --------------------------------------------------------- | ------------ | ------ |
-| Data pada tabel `kasir` ada                       | Data berhasil disalin ke tabel `nota`                     | Sesuai       | ✅      |
-| Data pada tabel `kasir` kosong                    | Query tetap berjalan, tapi tidak ada data yang dimasukkan | Sesuai       | ✅      |
-| Query INSERT gagal (misal koneksi error/db error) | Tidak ada penanganan error, kemungkinan gagal diam-diam   | ⚠️           | ⚠️     |
+### Flow Diagram
+```
+(1) Mulai
+  |
+(2) Jalankan query INSERT INTO nota SELECT
+
+```
 ---
 
 ## 6. function clearDataKasir()
@@ -129,11 +170,15 @@ function clearDataKasir()
 }
 
 ```
-| Kondisi Yang Diuji                          | Hasil Yang Diharapkan                       | Hasil Aktual | Status |
-| ------------------------------------------- | ------------------------------------------- | ------------ | ------ |
-| Data di tabel `kasir` ada                   | Semua data berhasil dihapus                 | Sesuai       | ✅      |
-| Tabel `kasir` sudah kosong                  | Query tetap jalan tanpa error               | Sesuai       | ✅      |
-| Query DELETE gagal (misal error koneksi/db) | Tidak ada penanganan error, gagal diam-diam | ⚠️           | ⚠️     |
+### Flow Diagram
+```
+(1) Mulai
+  |
+(2) Jalankan query DELETE FROM kasir
+  |
+(3) Selesai
+
+```
 ---
 
 ## 7. function getDataKasir()
@@ -153,11 +198,21 @@ function getDataKasir()
     return $kasir;
 }
 ```
-| Kondisi Yang Diuji        | Hasil Yang Diharapkan                                                             | Hasil Aktual | Status |
-| ------------------------- | --------------------------------------------------------------------------------- | ------------ | ------ |
-| Tabel `kasir` berisi data | Mengembalikan array berisi data semua baris dari `kasir`                          | Sesuai       | ✅      |
-| Tabel `kasir` kosong      | Mengembalikan array kosong                                                        | Sesuai       | ✅      |
-| Query SELECT gagal        | Fungsi tetap jalan tapi `$result` kemungkinan `false`, `mysqli_fetch_assoc` error | ⚠️           | ⚠️     |
+### Flow Diagram
+```
+(1) Mulai
+  |
+(2) Jalankan query SELECT * FROM kasir
+  |
+(3) Jika data ada, lakukan loop fetch_assoc untuk setiap baris
+  |
+(4) Simpan data ke array $kasir
+  |
+(5) Return array $kasir
+  |
+(6) Selesai
+
+```
 ---
 
 ## 8. function hitungTotalHarga()
@@ -173,11 +228,18 @@ function hitungTotalHarga()
     return $row['total_harga'];
 }
 ```
-| Kondisi Yang Diuji                          | Hasil Yang Diharapkan                                                            | Hasil Aktual | Status |
-| ------------------------------------------- | -------------------------------------------------------------------------------- | ------------ | ------ |
-| Tabel `kasir` berisi data                   | Mengembalikan jumlah total harga dari semua row                                  | Sesuai       | ✅      |
-| Tabel `kasir` kosong                        | Mengembalikan `NULL` atau `0` (tergantung DB)                                    | Sesuai       | ✅      |
-| Query SELECT gagal (misal koneksi/db error) | Fungsi error atau mengembalikan nilai kosong (karena tidak ada pengecekan error) | ⚠️           | ⚠️     |
+### Flow Diagram
+```
+(1) Mulai
+  |
+(2) Jalankan query SELECT SUM(total) AS total_harga FROM kasir
+  |
+(3) Ambil hasil query
+  |
+(4) Return total_harga
+  |
+(5) Selesai
+```
 ---
 
 ## 9. function hitungTotalHarga()
@@ -198,13 +260,21 @@ function kurangiStokBarang()
     }
 }
 ```
-| Kondisi Yang Diuji                               | Hasil Yang Diharapkan                                                | Hasil Aktual | Status |
-| ------------------------------------------------ | -------------------------------------------------------------------- | ------------ | ------ |
-| Tabel `kasir` berisi data                        | Melakukan update stok produk sesuai dengan jumlah barang yang dibeli | Sesuai       | ✅      |
-| Tabel `kasir` kosong                             | Loop tidak berjalan, tidak ada query update yang dijalankan          | Sesuai       | ✅      |
-| Query SELECT gagal (misal error koneksi/db)      | Fungsi error atau loop tidak berjalan karena `$result` false         | ⚠️           | ⚠️     |
-| Query UPDATE gagal (misal stok kurang, error DB) | Tidak ada penanganan error, kegagalan tidak terdeteksi               | ⚠️           | ⚠️     |
+### Flow Diagram
+```
+(1) Mulai
+  |
+(2) Jalankan query SELECT id_barang, jumlah FROM kasir
+  |
+(3) Jika ada data, lakukan loop fetch setiap baris
+  |
+(4) Jalankan query UPDATE produk untuk mengurangi stok sesuai jumlah
+  |
+(5) Ulangi sampai semua baris selesai
+  |
+(6) Selesai
 
+```
 
 
 
