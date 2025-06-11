@@ -3,7 +3,7 @@
 Dokumen ini merangkum hasil pengujian regresi untuk memastikan bahwa perubahan pada sistem PharmaPOS tidak merusak fitur-fitur utama dalam aplikasi.
 
 --
-📋 Rekap Hasil Pengujian:
+📋 Rekap Hasil Perbaikan bug :
 --
 Berikut merupakan rekap hasil pengujian regresi secara ringkas dalam bentuk tabel:
 
