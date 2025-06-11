@@ -1,6 +1,6 @@
 # TESTING-WEB-KELOMPOK-10
 
-Aplikasi *KasirSederhana* telah diuji menggunakan tiga jenis pendekatan pengujian: *White Box Testing, **Black Box Testing, dan **Grey Box Testing*. Pengujian dilakukan untuk memastikan stabilitas, keandalan, dan kesesuaian fungsi aplikasi dengan kebutuhan pengguna.
+Aplikasi PHARMAPOS telah diuji menggunakan tiga jenis pendekatan pengujian: *White Box Testing, **Black Box Testing, dan **Grey Box Testing*. Pengujian dilakukan untuk memastikan stabilitas, keandalan, dan kesesuaian fungsi aplikasi dengan kebutuhan pengguna.
 ---
 
 ### ✅ 1. *White Box Testing* (Pengujian dari sisi pengembang)
