@@ -6,4 +6,4 @@ BVA (Boundary Value Analysis) adalah teknik pengujian berbasis nilai batas dari 
 Equivalence Value (atau Equivalence Partitioning) adalah teknik pengujian dengan membagi input menjadi kelompok atau kelas yang dianggap setara (equivalence classes). Dalam setiap kelas, cukup diuji satu nilai karena diasumsikan hasilnya mewakili seluruh kelas.
 ---
 # 3. Behavior Testing
-Behavior Testing atau pengujian berbasis perilaku adalah metode pengujian black box yang fokus pada perilaku atau output sistem, tanpa peduli bagaimana implementasi internalnya.
+**Behavior Testing atau pengujian berbasis perilaku adalah metode pengujian black box yang fokus pada perilaku atau output sistem, tanpa peduli bagaimana implementasi internalnya.**
