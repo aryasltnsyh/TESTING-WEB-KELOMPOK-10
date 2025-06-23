@@ -1,6 +1,6 @@
 
 Pattern Testing, juga dikenal sebagai "Discovery Testing" atau "Exploratory Testing",
-adalah pendekatan pengujian perangkat lunak yang berfokus pada eksplorasi dan
+Digunakan untuk pendekatan pengujian perangkat lunak yang berfokus pada eksplorasi dan
 penemuan bug secara kreatif dan inovatif. Teknik ini menekankan pada pemikiran
 kritis, intuisi, dan pengalaman tester untuk mengidentifikasi potensi masalah yang
 mungkin terlewatkan oleh tes formal.
